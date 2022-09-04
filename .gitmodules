@@ -1,0 +1,3 @@
+[submodule "Hardware/Lib-ADP"]
+	path = Hardware/Lib-ADP
+	url = git@github.com:redlightASl/Lib-ADP.git

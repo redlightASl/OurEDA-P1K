@@ -1,4 +1,6 @@
-Record=TopLevelDocument|FileName=OurEDA-P1K_Network.SchDoc|SheetNumber=2
-Record=NoMainPathDocument|SourceDocument=OurEDA-P1K_Network.SchDoc|FileName=OurEDA-P1K_PowerManagement.SchDoc|SheetNumber=1
-Record=NoMainPathDocument|SourceDocument=OurEDA-P1K_Network.SchDoc|FileName=OurEDA-P1K_sensor.SchDoc|SheetNumber=4
-Record=NoMainPathDocument|SourceDocument=OurEDA-P1K_Network.SchDoc|FileName=OurEDA-P1K_zynq.SchDoc|SheetNumber=3
+Record=TopLevelDocument|FileName=OurEDA-P1K_cam.SchDoc|SheetNumber=5
+Record=NoMainPathDocument|SourceDocument=OurEDA-P1K_cam.SchDoc|FileName=OurEDA-P1K_Network.SchDoc|SheetNumber=2
+Record=NoMainPathDocument|SourceDocument=OurEDA-P1K_cam.SchDoc|FileName=OurEDA-P1K_PowerManagement.SchDoc|SheetNumber=1
+Record=NoMainPathDocument|SourceDocument=OurEDA-P1K_cam.SchDoc|FileName=OurEDA-P1K_sensor.SchDoc|SheetNumber=4
+Record=NoMainPathDocument|SourceDocument=OurEDA-P1K_cam.SchDoc|FileName=OurEDA-P1K_usb.SchDoc|SheetNumber=6
+Record=NoMainPathDocument|SourceDocument=OurEDA-P1K_cam.SchDoc|FileName=OurEDA-P1K_zynq.SchDoc|SheetNumber=3

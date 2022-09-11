@@ -1,0 +1,86 @@
+Removed Pin From Net: NetName=T17 Pin=JP9-3
+Removed Pin From Net: NetName=R18 Pin=JP9-5
+Removed Pin From Net: NetName=P15 Pin=JP9-6
+Removed Pin From Net: NetName=P16 Pin=JP9-7
+Removed Pin From Net: NetName=T14 Pin=JP9-8
+Removed Pin From Net: NetName=T15 Pin=JP9-9
+Removed Pin From Net: NetName=U13 Pin=JP9-12
+Removed Pin From Net: NetName=T17 Pin=R65-2
+Removed Pin From Net: NetName=R18 Pin=R66-2
+Removed Member From Class: ClassName=OurEDA-P1K_Network Member=C13
+Removed Member From Class: ClassName=OurEDA-P1K_zynq Member=C32
+Removed Member From Class: ClassName=OurEDA-P1K_sensor Member=C34
+Added Pin To Net: NetName=T17 Pin=JP9-16
+Added Pin To Net: NetName=R18 Pin=JP9-17
+Added Pin To Net: NetName=P15 Pin=JP9-18
+Added Pin To Net: NetName=P16 Pin=JP9-19
+Added Pin To Net: NetName=T14 Pin=JP9-20
+Added Pin To Net: NetName=T15 Pin=JP9-21
+Added Pin To Net: NetName=U13 Pin=JP9-22
+Added Pin To Net: NetName=L16 Pin=J1-112
+Added Pin To Net: NetName=L16 Pin=JP9-3
+Added Pin To Net: NetName=L16 Pin=R65-2
+Added Net: Name=L16
+Added Pin To Net: NetName=N15 Pin=J1-98
+Added Pin To Net: NetName=N15 Pin=JP9-12
+Added Net: Name=N15
+Added Pin To Net: NetName=N16 Pin=J1-100
+Added Pin To Net: NetName=N16 Pin=JP9-9
+Added Net: Name=N16
+Added Pin To Net: NetName=N18 Pin=J1-108
+Added Pin To Net: NetName=N18 Pin=JP9-5
+Added Pin To Net: NetName=N18 Pin=R66-2
+Added Net: Name=N18
+Added Pin To Net: NetName=P19 Pin=J1-106
+Added Pin To Net: NetName=P19 Pin=JP9-6
+Added Net: Name=P19
+Added Pin To Net: NetName=R16 Pin=J1-102
+Added Pin To Net: NetName=R16 Pin=JP9-8
+Added Net: Name=R16
+Added Pin To Net: NetName=R17 Pin=J1-104
+Added Pin To Net: NetName=R17 Pin=JP9-7
+Added Net: Name=R17
+Added Pin To Net: NetName=V12 Pin=J1-94
+Added Pin To Net: NetName=V12 Pin=JP9-14
+Added Net: Name=V12
+Added Pin To Net: NetName=W13 Pin=J1-96
+Added Pin To Net: NetName=W13 Pin=JP9-13
+Added Net: Name=W13
+Added Member To Class: ClassName=OurEDA-P1K_PowerManagement Member=Component C3 100nF
+Added Member To Class: ClassName=OurEDA-P1K_PowerManagement Member=Component C4 12pF
+Added Member To Class: ClassName=OurEDA-P1K_PowerManagement Member=Component C6 0.1uF
+Added Member To Class: ClassName=OurEDA-P1K_PowerManagement Member=Component C8 0.1uF
+Added Member To Class: ClassName=OurEDA-P1K_PowerManagement Member=Component C10 105
+Added Member To Class: ClassName=OurEDA-P1K_PowerManagement Member=Component C12 2.2uF
+Added Member To Class: ClassName=OurEDA-P1K_PowerManagement Member=Component C13 0.1uF
+Added Member To Class: ClassName=OurEDA-P1K_Network Member=Component C14 104
+Added Member To Class: ClassName=OurEDA-P1K_Network Member=Component C17 106
+Added Member To Class: ClassName=OurEDA-P1K_Network Member=Component C19 106
+Added Member To Class: ClassName=OurEDA-P1K_Network Member=Component C21 104
+Added Member To Class: ClassName=OurEDA-P1K_Network Member=Component C23 104
+Added Member To Class: ClassName=OurEDA-P1K_Network Member=Component C25 10uF
+Added Member To Class: ClassName=OurEDA-P1K_Network Member=Component C27 104
+Added Member To Class: ClassName=OurEDA-P1K_Network Member=Component C29 106
+Added Member To Class: ClassName=OurEDA-P1K_Network Member=Component C31 104
+Added Member To Class: ClassName=OurEDA-P1K_zynq Member=Component C33 103
+Added Member To Class: ClassName=OurEDA-P1K_sensor Member=Component C35 0.1uF
+Added Member To Class: ClassName=OurEDA-P1K_sensor Member=Component C37 0.1uF
+Added Member To Class: ClassName=OurEDA-P1K_cam Member=Component C39 10uF
+Added Member To Class: ClassName=OurEDA-P1K_cam Member=Component C41 104
+Added Member To Class: ClassName=OurEDA-P1K_cam Member=Component C43 10uF
+Added Member To Class: ClassName=OurEDA-P1K_cam Member=Component C45 10uF
+Added Member To Class: ClassName=OurEDA-P1K_cam Member=Component C47 10uF
+Added Member To Class: ClassName=OurEDA-P1K_cam Member=Component C49 104
+Added Member To Class: ClassName=OurEDA-P1K_usb Member=Component C51 106
+Added Member To Class: ClassName=OurEDA-P1K_usb Member=Component C53 106
+Added Member To Class: ClassName=OurEDA-P1K_usb Member=Component C55 104
+Added Member To Class: ClassName=OurEDA-P1K_usb Member=Component C57 10uF
+Added Member To Class: ClassName=OurEDA-P1K_usb Member=Component C59 10uF
+Added Member To Class: ClassName=OurEDA-P1K_PowerManagement Member=Component E2 10uF/50V
+Added Member To Class: ClassName=OurEDA-P1K_PowerManagement Member=Component E3 100uF/16V
+Added Member To Class: ClassName=OurEDA-P1K_PowerManagement Member=Component R10 1M
+Added Room: Name=OurEDA-P1K_cam
+Added Room: Name=OurEDA-P1K_Network
+Added Room: Name=OurEDA-P1K_sensor
+Added Room: Name=OurEDA-P1K_usb
+Added Room: Name=OurEDA-P1K_zynq

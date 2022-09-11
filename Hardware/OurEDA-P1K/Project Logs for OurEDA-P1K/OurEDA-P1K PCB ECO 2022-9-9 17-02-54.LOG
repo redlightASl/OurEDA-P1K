@@ -1,0 +1,16 @@
+Removed Member From Class: ClassName=OurEDA-P1K_sensor Member=JP4
+Removed Member From Class: ClassName=OurEDA-P1K_cam Member=JP8
+Change Component Footprint: Designator=R19 Old Footprint=R 0805_L New Footprint=R 0603_L
+Change Component Footprint: Designator=R21 Old Footprint=R 0805_L New Footprint=R 0603_L
+Added Member To Class: ClassName=OurEDA-P1K_PowerManagement Member=Component JP1 HDR-1X2
+Added Member To Class: ClassName=OurEDA-P1K_zynq Member=Component JP3 HDR-1X5
+Added Member To Class: ClassName=OurEDA-P1K_sensor Member=Component JP5 HDR-1X4
+Added Member To Class: ClassName=OurEDA-P1K_sensor Member=Component JP7 HDR-1X5
+Added Member To Class: ClassName=OurEDA-P1K_cam Member=Component JP9 FPC1.0-24P
+Added Member To Class: ClassName=OurEDA-P1K_PowerManagement Member=Component R10 28K
+Added Room: Name=OurEDA-P1K_cam
+Added Room: Name=OurEDA-P1K_Network
+Added Room: Name=OurEDA-P1K_PowerManagement
+Added Room: Name=OurEDA-P1K_sensor
+Added Room: Name=OurEDA-P1K_usb
+Added Room: Name=OurEDA-P1K_zynq

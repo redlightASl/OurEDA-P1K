@@ -1,0 +1,10 @@
+Removed Pin From Net: NetName=Y18 Pin=JP8-3
+Removed Pin From Net: NetName=W20 Pin=JP8-7
+Added Pin To Net: NetName=W20 Pin=JP8-3
+Added Pin To Net: NetName=Y18 Pin=JP8-7
+Added Room: Name=OurEDA-P1K_cam
+Added Room: Name=OurEDA-P1K_Network
+Added Room: Name=OurEDA-P1K_PowerManagement
+Added Room: Name=OurEDA-P1K_sensor
+Added Room: Name=OurEDA-P1K_usb
+Added Room: Name=OurEDA-P1K_zynq

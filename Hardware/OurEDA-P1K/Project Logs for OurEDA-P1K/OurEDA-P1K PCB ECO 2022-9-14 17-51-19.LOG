@@ -1,0 +1,18 @@
+Added Pin To Net: NetName=V20 Pin=J1-135
+Added Pin To Net: NetName=V20 Pin=JP8-7
+Added Net: Name=V20
+Added Pin To Net: NetName=W20 Pin=J1-133
+Added Pin To Net: NetName=W20 Pin=JP8-5
+Added Net: Name=W20
+Added Pin To Net: NetName=Y18 Pin=J1-129
+Added Pin To Net: NetName=Y18 Pin=JP8-1
+Added Net: Name=Y18
+Added Pin To Net: NetName=Y19 Pin=J1-131
+Added Pin To Net: NetName=Y19 Pin=JP8-3
+Added Net: Name=Y19
+Added Room: Name=OurEDA-P1K_cam
+Added Room: Name=OurEDA-P1K_Network
+Added Room: Name=OurEDA-P1K_PowerManagement
+Added Room: Name=OurEDA-P1K_sensor
+Added Room: Name=OurEDA-P1K_usb
+Added Room: Name=OurEDA-P1K_zynq

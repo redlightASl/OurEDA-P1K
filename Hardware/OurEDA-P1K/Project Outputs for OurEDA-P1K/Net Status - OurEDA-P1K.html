@@ -1,0 +1,1376 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 { 
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body { 
+			font-family : segoe ui;
+		}
+
+		td, th {  
+			padding: 0.5em;
+			text-align : left;
+		}
+		th { 
+			background-color : #EEEEEE;
+		
+		}
+		th.column1, td.column1 { 
+			width : 50%; 
+		}
+
+        th.column2, td.column2 {
+            width : 25%;
+        }
+
+		table { 
+			width : 100%; 
+            font-size: 0.9em;
+		}
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 5em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error { 
+			color : red;
+			font-weight : bold;
+		}	
+		tr.onmouseout_odd { 
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+			
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);		
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {	
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}	
+	</script><title>Net Status Report</title>
+</head>
+<body onload="document.getElementById('radio_mil').click()"><img ALT="Altium" src="
+			file://D:\AD22Doc\Templates\AD_logo.png
+		"><a href="dxpprocess://Client:SetupPreferences?Server=PCB|PageName=Reports" class="customize"><acronym title="dxpprocess://Client:SetupPreferences?Server=PCB|PageName=Reports">customize</acronym></a><h1>Net Status Report</h1>
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">2022/9/15</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">22:10:37</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:00</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc" class="file"><acronym title="F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc">F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc</acronym></a></td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Units:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">
+<form><input type="radio" name="radio_units" id="radio_mm" onclick="changeUnits(this, 'mm')">mm<input type="radio" name="radio_units" id="radio_mil" onclick="changeUnits(this, 'mil')">mils</form>
+</td>
+</tr>
+</table><a name="ID3FAWKONOYV4FFQKZ1WCVIU33LYTHLA0IBEN1HF4FWLVLKTXNQHL"><table>
+<tr>
+<th class="column1">Nets</th>
+<th class="column2">Layer</th>
+<th class="column3">Length</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3726.378mil|Location2.X=6254mil|Location1.Y=2146.079mil|Location2.Y=4344.276mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3726.378mil|Location2.X=6254mil|Location1.Y=2146.079mil|Location2.Y=4344.276mil|Absolute=True">+12</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="22269038">2226.904mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5319.307mil|Location2.X=6565.26mil|Location1.Y=2350.077mil|Location2.Y=4209mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5319.307mil|Location2.X=6565.26mil|Location1.Y=2350.077mil|Location2.Y=4209mil|Absolute=True">+24</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="18345601">1834.56mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1143.996mil|Location2.X=5423.997mil|Location1.Y=1702.89mil|Location2.Y=3983.843mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1143.996mil|Location2.X=5423.997mil|Location1.Y=1702.89mil|Location2.Y=3983.843mil|Absolute=True">+5</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="109085179">10908.518mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2939.721mil|Location2.X=3226.004mil|Location1.Y=2628.091mil|Location2.Y=2948.091mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2939.721mil|Location2.X=3226.004mil|Location1.Y=2628.091mil|Location2.Y=2948.091mil|Absolute=True">1V05A_PHY</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="8551913">855.191mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3246.587mil|Location2.X=3368.997mil|Location1.Y=2643.091mil|Location2.Y=2892.507mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3246.587mil|Location2.X=3368.997mil|Location1.Y=2643.091mil|Location2.Y=2892.507mil|Absolute=True">1V05D_PHY</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="4665222">466.522mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2853.996mil|Location2.X=3314.003mil|Location1.Y=2900.095mil|Location2.Y=3023.095mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2853.996mil|Location2.X=3314.003mil|Location1.Y=2900.095mil|Location2.Y=3023.095mil|Absolute=True">1V05_PHY</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="5430830">543.083mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1218.996mil|Location2.X=3258.413mil|Location1.Y=1702.89mil|Location2.Y=2878.098mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1218.996mil|Location2.X=3258.413mil|Location1.Y=1702.89mil|Location2.Y=2878.098mil|Absolute=True">1V8</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="32700077">3270.008mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=958.592mil|Location2.X=5310mil|Location1.Y=1623.091mil|Location2.Y=4231.992mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=958.592mil|Location2.X=5310mil|Location1.Y=1623.091mil|Location2.Y=4231.992mil|Absolute=True">3V3</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="77395886">7739.589mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3015mil|Location2.X=3855mil|Location1.Y=2645.095mil|Location2.Y=3263.098mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3015mil|Location2.X=3855mil|Location1.Y=2645.095mil|Location2.Y=3263.098mil|Absolute=True">3V3A</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="27591189">2759.119mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3276.378mil|Location2.X=5783.413mil|Location1.Y=3278.091mil|Location2.Y=4306.968mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3276.378mil|Location2.X=5783.413mil|Location1.Y=3278.091mil|Location2.Y=4306.968mil|Absolute=True">6V</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="36370821">3637.082mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1035.531mil|Location2.X=1124.394mil|Location1.Y=2930.528mil|Location2.Y=3093.091mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1035.531mil|Location2.X=1124.394mil|Location1.Y=2930.528mil|Location2.Y=3093.091mil|Absolute=True">AF2V8</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1681263">168.126mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=892.654mil|Location2.X=1221.835mil|Location1.Y=3307.595mil|Location2.Y=3482.501mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=892.654mil|Location2.X=1221.835mil|Location1.Y=3307.595mil|Location2.Y=3482.501mil|Absolute=True">AVDD_2V8</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="4689812">468.981mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1990.997mil|Location2.X=3281.52mil|Location1.Y=1884.094mil|Location2.Y=3497.507mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1990.997mil|Location2.X=3281.52mil|Location1.Y=1884.094mil|Location2.Y=3497.507mil|Absolute=True">BEEP</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="33041425">3304.143mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=892.654mil|Location2.X=951.835mil|Location1.Y=3430.882mil|Location2.Y=3450.693mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=892.654mil|Location2.X=951.835mil|Location1.Y=3430.882mil|Location2.Y=3450.693mil|Absolute=True">CAM_GND</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=814.409mil|Location2.X=5525.181mil|Location1.Y=1670.094mil|Location2.Y=4231.992mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=814.409mil|Location2.X=5525.181mil|Location1.Y=1670.094mil|Location2.Y=4231.992mil|Absolute=True">DGND</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="95626009">9562.601mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=892.654mil|Location2.X=1478.567mil|Location1.Y=3227.618mil|Location2.Y=3470.098mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=892.654mil|Location2.X=1478.567mil|Location1.Y=3227.618mil|Location2.Y=3470.098mil|Absolute=True">DOVDD_2V8</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="7618397">761.84mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=892.654mil|Location2.X=1201.795mil|Location1.Y=3211.157mil|Location2.Y=3293.213mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=892.654mil|Location2.X=1201.795mil|Location1.Y=3211.157mil|Location2.Y=3293.213mil|Absolute=True">DVDD_1V5</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="3816364">381.636mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3436.594mil|Location2.X=3616.677mil|Location1.Y=2835.803mil|Location2.Y=2883.098mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3436.594mil|Location2.X=3616.677mil|Location1.Y=2835.803mil|Location2.Y=2883.098mil|Absolute=True">ETH_LED0</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1408486">140.849mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3437.181mil|Location2.X=3616.677mil|Location1.Y=2895.095mil|Location2.Y=2957.386mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3437.181mil|Location2.X=3616.677mil|Location1.Y=2895.095mil|Location2.Y=2957.386mil|Absolute=True">ETH_LED1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1464731">146.473mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4709.816mil|Location2.X=4979.134mil|Location1.Y=2507.577mil|Location2.Y=3067.383mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4709.816mil|Location2.X=4979.134mil|Location1.Y=2507.577mil|Location2.Y=3067.383mil|Absolute=True">ETH_OUT</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="6419331">641.933mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4530.763mil|Location2.X=4979.134mil|Location1.Y=2113.877mil|Location2.Y=2546.992mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4530.763mil|Location2.X=4979.134mil|Location1.Y=2113.877mil|Location2.Y=2546.992mil|Absolute=True">ETH_Rx_N</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="6807316">680.732mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4530.763mil|Location2.X=4979.134mil|Location1.Y=2192.577mil|Location2.Y=2632.859mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4530.763mil|Location2.X=4979.134mil|Location1.Y=2192.577mil|Location2.Y=2632.859mil|Absolute=True">ETH_Rx_P</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="6907587">690.759mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4530.764mil|Location2.X=4979.134mil|Location1.Y=1956.377mil|Location2.Y=2282.86mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4530.764mil|Location2.X=4979.134mil|Location1.Y=1956.377mil|Location2.Y=2282.86mil|Absolute=True">ETH_Tx_N</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="5214773">521.477mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4530.764mil|Location2.X=4979.134mil|Location1.Y=2035.077mil|Location2.Y=2382.859mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4530.764mil|Location2.X=4979.134mil|Location1.Y=2035.077mil|Location2.Y=2382.859mil|Absolute=True">ETH_Tx_P</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="5657822">565.782mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3149.567mil|Location2.X=3209.587mil|Location1.Y=2818.689mil|Location2.Y=2943.091mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3149.567mil|Location2.X=3209.587mil|Location1.Y=2818.689mil|Location2.Y=2943.091mil|Absolute=True">ETH_XTAL</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1019030">101.903mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2615.546mil|Location2.X=3900mil|Location1.Y=1702.89mil|Location2.Y=3522.501mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2615.546mil|Location2.X=3900mil|Location1.Y=1702.89mil|Location2.Y=3522.501mil|Absolute=True">F20_Button</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="29299657">2929.966mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=814.409mil|Location2.X=1521.677mil|Location1.Y=1702.89mil|Location2.Y=2222.811mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=814.409mil|Location2.X=1521.677mil|Location1.Y=1702.89mil|Location2.Y=2222.811mil|Absolute=True">FPGA_TCK</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="9040636">904.064mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=814.409mil|Location2.X=1474.433mil|Location1.Y=1702.89mil|Location2.Y=2124.386mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=814.409mil|Location2.X=1474.433mil|Location1.Y=1702.89mil|Location2.Y=2124.386mil|Absolute=True">FPGA_TDI</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="8027203">802.72mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=814.409mil|Location2.X=1498.055mil|Location1.Y=1702.89mil|Location2.Y=2173.598mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=814.409mil|Location2.X=1498.055mil|Location1.Y=1702.89mil|Location2.Y=2173.598mil|Absolute=True">FPGA_TDO</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="8533920">853.392mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=814.409mil|Location2.X=1450.811mil|Location1.Y=1702.89mil|Location2.Y=2075.173mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=814.409mil|Location2.X=1450.811mil|Location1.Y=1702.89mil|Location2.Y=2075.173mil|Absolute=True">FPGA_TMS</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="7549777">754.978mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2760mil|Location2.X=3245mil|Location1.Y=2025.724mil|Location2.Y=3930.095mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2760mil|Location2.X=3245mil|Location1.Y=2025.724mil|Location2.Y=3930.095mil|Absolute=True">H18</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="22319894">2231.989mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2730mil|Location2.X=3207.598mil|Location1.Y=1928.091mil|Location2.Y=3830.095mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2730mil|Location2.X=3207.598mil|Location1.Y=1928.091mil|Location2.Y=3830.095mil|Absolute=True">J18</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="22393493">2239.349mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=892.654mil|Location2.X=2621.004mil|Location1.Y=2025.724mil|Location2.Y=3481.913mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=892.654mil|Location2.X=2621.004mil|Location1.Y=2025.724mil|Location2.Y=3481.913mil|Absolute=True">L16</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="25176307">2517.631mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4708.008mil|Location2.X=4979.134mil|Location1.Y=2271.378mil|Location2.Y=2924.146mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4708.008mil|Location2.X=4979.134mil|Location1.Y=2271.378mil|Location2.Y=2924.146mil|Absolute=True">LED_OUT</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="7130085">713.009mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3023.52mil|Location2.X=4014.843mil|Location1.Y=1864.094mil|Location2.Y=2112.465mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3023.52mil|Location2.X=4014.843mil|Location1.Y=1864.094mil|Location2.Y=2112.465mil|Absolute=True">M14</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="12034777">1203.478mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3047.142mil|Location2.X=4014.843mil|Location1.Y=1917.677mil|Location2.Y=2112.465mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3047.142mil|Location2.X=4014.843mil|Location1.Y=1917.677mil|Location2.Y=2112.465mil|Absolute=True">M15</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="11192786">1119.279mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3253.205mil|Location2.X=3422.819mil|Location1.Y=2595.095mil|Location2.Y=2717.949mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3253.205mil|Location2.X=3422.819mil|Location1.Y=2595.095mil|Location2.Y=2717.949mil|Absolute=True">MDC</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2024307">202.431mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3436mil|Location2.X=3612.228mil|Location1.Y=2025.724mil|Location2.Y=2633.095mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3436mil|Location2.X=3612.228mil|Location1.Y=2025.724mil|Location2.Y=2633.095mil|Absolute=True">MDC_FPGA</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="6056154">605.615mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2913.996mil|Location2.X=4259.235mil|Location1.Y=2228.091mil|Location2.Y=2820.098mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2913.996mil|Location2.X=4259.235mil|Location1.Y=2228.091mil|Location2.Y=2820.098mil|Absolute=True">MDI0_N</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="16502479">1650.248mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2913.996mil|Location2.X=4259.236mil|Location1.Y=2315.595mil|Location2.Y=2860.098mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2913.996mil|Location2.X=4259.236mil|Location1.Y=2315.595mil|Location2.Y=2860.098mil|Absolute=True">MDI0_P</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="16502479">1650.248mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2892mil|Location2.X=4259.236mil|Location1.Y=2478.091mil|Location2.Y=2868.303mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2892mil|Location2.X=4259.236mil|Location1.Y=2478.091mil|Location2.Y=2868.303mil|Absolute=True">MDI1_N</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="19035880">1903.588mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2905mil|Location2.X=4259.236mil|Location1.Y=2565.595mil|Location2.Y=2855.303mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2905mil|Location2.X=4259.236mil|Location1.Y=2565.595mil|Location2.Y=2855.303mil|Absolute=True">MDI1_P</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="18174315">1817.432mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3015.205mil|Location2.X=3048.795mil|Location1.Y=2684.358mil|Location2.Y=2702.201mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3015.205mil|Location2.X=3048.795mil|Location1.Y=2684.358mil|Location2.Y=2702.201mil|Absolute=True">MDI2_N</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3015.205mil|Location2.X=3048.795mil|Location1.Y=2700.106mil|Location2.Y=2717.949mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3015.205mil|Location2.X=3048.795mil|Location1.Y=2700.106mil|Location2.Y=2717.949mil|Absolute=True">MDI2_P</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3015.205mil|Location2.X=3048.795mil|Location1.Y=2637.114mil|Location2.Y=2654.957mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3015.205mil|Location2.X=3048.795mil|Location1.Y=2637.114mil|Location2.Y=2654.957mil|Absolute=True">MDI3_N</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3015.205mil|Location2.X=3048.795mil|Location1.Y=2652.862mil|Location2.Y=2670.705mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3015.205mil|Location2.X=3048.795mil|Location1.Y=2652.862mil|Location2.Y=2670.705mil|Absolute=True">MDI3_P</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3253.205mil|Location2.X=3422.819mil|Location1.Y=2695.095mil|Location2.Y=2783.095mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3253.205mil|Location2.X=3422.819mil|Location1.Y=2695.095mil|Location2.Y=2783.095mil|Absolute=True">MDIO</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1882431">188.243mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3436mil|Location2.X=3635.85mil|Location1.Y=2025.724mil|Location2.Y=2733.095mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3436mil|Location2.X=3635.85mil|Location1.Y=2025.724mil|Location2.Y=2733.095mil|Absolute=True">MDIO_FPGA</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="7154000">715.4mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=892.654mil|Location2.X=2481.004mil|Location1.Y=2025.724mil|Location2.Y=3280.098mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=892.654mil|Location2.X=2481.004mil|Location1.Y=2025.724mil|Location2.Y=3280.098mil|Absolute=True">N15</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="21350917">2135.092mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=845.65mil|Location2.X=2506.004mil|Location1.Y=2025.724mil|Location2.Y=3338.996mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=845.65mil|Location2.X=2506.004mil|Location1.Y=2025.724mil|Location2.Y=3338.996mil|Absolute=True">N16</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="22837482">2283.748mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=892.654mil|Location2.X=2596.004mil|Location1.Y=2025.724mil|Location2.Y=3439.095mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=892.654mil|Location2.X=2596.004mil|Location1.Y=2025.724mil|Location2.Y=3439.095mil|Absolute=True">N18</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="25086572">2508.657mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1524.661mil|Location2.X=1952.622mil|Location1.Y=3596.866mil|Location2.Y=3693.661mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1524.661mil|Location2.X=1952.622mil|Location1.Y=3596.866mil|Location2.Y=3693.661mil|Absolute=True">NetB1_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="3932452">393.245mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4377.378mil|Location2.X=4495.105mil|Location1.Y=3668.483mil|Location2.Y=3706.483mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4377.378mil|Location2.X=4495.105mil|Location1.Y=3668.483mil|Location2.Y=3706.483mil|Absolute=True">NetC10_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="700491">70.049mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5115.997mil|Location2.X=5323.133mil|Location1.Y=3452.866mil|Location2.Y=3709.315mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5115.997mil|Location2.X=5323.133mil|Location1.Y=3452.866mil|Location2.Y=3709.315mil|Absolute=True">NetC11_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2053156">205.316mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5115.997mil|Location2.X=5240.693mil|Location1.Y=3680.682mil|Location2.Y=3729mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5115.997mil|Location2.X=5240.693mil|Location1.Y=3680.682mil|Location2.Y=3729mil|Absolute=True">NetC11_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="939891">93.989mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5115.997mil|Location2.X=5240.693mil|Location1.Y=3728.874mil|Location2.Y=3767.501mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5115.997mil|Location2.X=5240.693mil|Location1.Y=3728.874mil|Location2.Y=3767.501mil|Absolute=True">NetC13_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="899748">89.975mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5960.997mil|Location2.X=6148.133mil|Location1.Y=3927.866mil|Location2.Y=4189.315mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5960.997mil|Location2.X=6148.133mil|Location1.Y=3927.866mil|Location2.Y=4189.315mil|Absolute=True">NetC1_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2053156">205.316mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5960.997mil|Location2.X=6079.748mil|Location1.Y=4150.682mil|Location2.Y=4209mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5960.997mil|Location2.X=6079.748mil|Location1.Y=4150.682mil|Location2.Y=4209mil|Absolute=True">NetC1_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="921863">92.186mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4091.587mil|Location2.X=4259.236mil|Location1.Y=2295.091mil|Location2.Y=2333.091mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4091.587mil|Location2.X=4259.236mil|Location1.Y=2295.091mil|Location2.Y=2333.091mil|Absolute=True">NetC35_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1092171">109.217mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4091.587mil|Location2.X=4259.236mil|Location1.Y=2545.091mil|Location2.Y=2583.091mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4091.587mil|Location2.X=4259.236mil|Location1.Y=2545.091mil|Location2.Y=2583.091mil|Absolute=True">NetC36_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1092171">109.217mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4658.999mil|Location2.X=4791.004mil|Location1.Y=2130.682mil|Location2.Y=2600.098mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4658.999mil|Location2.X=4791.004mil|Location1.Y=2130.682mil|Location2.Y=2600.098mil|Absolute=True">NetC37_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="6133824">613.382mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1256mil|Location2.X=1473.997mil|Location1.Y=3275.688mil|Location2.Y=3370.595mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1256mil|Location2.X=1473.997mil|Location1.Y=3275.688mil|Location2.Y=3370.595mil|Absolute=True">NetC49_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2018985">201.899mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1990mil|Location2.X=2138.997mil|Location1.Y=2851.095mil|Location2.Y=3032.507mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1990mil|Location2.X=2138.997mil|Location1.Y=2851.095mil|Location2.Y=3032.507mil|Absolute=True">NetC57_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2304062">230.406mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5955.997mil|Location2.X=6079.748mil|Location1.Y=4199.501mil|Location2.Y=4237.501mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5955.997mil|Location2.X=6079.748mil|Location1.Y=4199.501mil|Location2.Y=4237.501mil|Absolute=True">NetC5_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="851187">85.119mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5884.779mil|Location2.X=6138.133mil|Location1.Y=3290.091mil|Location2.Y=3495.26mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5884.779mil|Location2.X=6138.133mil|Location1.Y=3290.091mil|Location2.Y=3495.26mil|Absolute=True">NetC6_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2053156">205.316mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5865.095mil|Location2.X=5918.413mil|Location1.Y=3290.091mil|Location2.Y=3404.787mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5865.095mil|Location2.X=5918.413mil|Location1.Y=3290.091mil|Location2.Y=3404.787mil|Absolute=True">NetC6_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="860601">86.06mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4019.581mil|Location2.X=4435.696mil|Location1.Y=3464.151mil|Location2.Y=3835.887mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4019.581mil|Location2.X=4435.696mil|Location1.Y=3464.151mil|Location2.Y=3835.887mil|Absolute=True">NetC8_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="7182414">718.241mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4397.696mil|Location2.X=4485.69mil|Location1.Y=3849.068mil|Location2.Y=3887.074mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4397.696mil|Location2.X=4485.69mil|Location1.Y=3849.068mil|Location2.Y=3887.074mil|Absolute=True">NetC8_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="499963">49.996mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5831mil|Location2.X=5869mil|Location1.Y=3290.095mil|Location2.Y=3404.787mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5831mil|Location2.X=5869mil|Location1.Y=3290.095mil|Location2.Y=3404.787mil|Absolute=True">NetC9_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="781464">78.146mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4576.709mil|Location2.X=4693.291mil|Location1.Y=3777.102mil|Location2.Y=3821.716mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4576.709mil|Location2.X=4693.291mil|Location1.Y=3777.102mil|Location2.Y=3821.716mil|Absolute=True">NetD2_K</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="700000">70mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3632.693mil|Location2.X=3773.098mil|Location1.Y=2835.803mil|Location2.Y=2882.386mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3632.693mil|Location2.X=3773.098mil|Location1.Y=2835.803mil|Location2.Y=2882.386mil|Absolute=True">NetD3_K</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="990990">99.099mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3632.693mil|Location2.X=3773.098mil|Location1.Y=2910.803mil|Location2.Y=2957.386mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3632.693mil|Location2.X=3773.098mil|Location1.Y=2910.803mil|Location2.Y=2957.386mil|Absolute=True">NetD4_K</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="990990">99.099mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4647.378mil|Location2.X=4702.507mil|Location1.Y=2815.098mil|Location2.Y=2912.386mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4647.378mil|Location2.X=4702.507mil|Location1.Y=2815.098mil|Location2.Y=2912.386mil|Absolute=True">NetD6_K</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="627783">62.778mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4649.186mil|Location2.X=4704mil|Location1.Y=2970.095mil|Location2.Y=3067.383mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4649.186mil|Location2.X=4704mil|Location1.Y=2970.095mil|Location2.Y=3067.383mil|Absolute=True">NetD7_K</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="605916">60.592mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5092.693mil|Location2.X=5240mil|Location1.Y=2579.095mil|Location2.Y=2689.095mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5092.693mil|Location2.X=5240mil|Location1.Y=2579.095mil|Location2.Y=2689.095mil|Absolute=True">NetDE1_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="3520796">352.08mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1218.205mil|Location2.X=1404.197mil|Location1.Y=3164.386mil|Location2.Y=3277.032mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1218.205mil|Location2.X=1404.197mil|Location1.Y=3164.386mil|Location2.Y=3277.032mil|Absolute=True">NetFB2_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1701104">170.11mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6158.362mil|Location2.X=6303.413mil|Location1.Y=4248.244mil|Location2.Y=4293.095mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6158.362mil|Location2.X=6303.413mil|Location1.Y=4248.244mil|Location2.Y=4293.095mil|Absolute=True">NetIC1_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1129083">112.908mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5983.996mil|Location2.X=6227.996mil|Location1.Y=3935.084mil|Location2.Y=4275.098mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5983.996mil|Location2.X=6227.996mil|Location1.Y=3935.084mil|Location2.Y=4275.098mil|Absolute=True">NetIC1_13</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="4937827">493.783mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6158.362mil|Location2.X=6303.997mil|Location1.Y=4205.682mil|Location2.Y=4243.688mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6158.362mil|Location2.X=6303.997mil|Location1.Y=4205.682mil|Location2.Y=4243.688mil|Absolute=True">NetIC1_3</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1093368">109.337mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5796.003mil|Location2.X=5834.594mil|Location1.Y=3483.402mil|Location2.Y=3627.507mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5796.003mil|Location2.X=5834.594mil|Location1.Y=3483.402mil|Location2.Y=3627.507mil|Absolute=True">NetIC2_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1057475">105.748mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5798.559mil|Location2.X=6141.004mil|Location1.Y=3313.961mil|Location2.Y=3570.098mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5798.559mil|Location2.X=6141.004mil|Location1.Y=3313.961mil|Location2.Y=3570.098mil|Absolute=True">NetIC2_13</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="4848023">484.802mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5845.406mil|Location2.X=5883.413mil|Location1.Y=3483.402mil|Location2.Y=3628.091mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5845.406mil|Location2.X=5883.413mil|Location1.Y=3483.402mil|Location2.Y=3628.091mil|Absolute=True">NetIC2_3</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1105408">110.541mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5319.307mil|Location2.X=5474mil|Location1.Y=3768.244mil|Location2.Y=3808.095mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5319.307mil|Location2.X=5474mil|Location1.Y=3768.244mil|Location2.Y=3808.095mil|Absolute=True">NetIC3_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1204785">120.479mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5144.867mil|Location2.X=5410.926mil|Location1.Y=3460.365mil|Location2.Y=3794.992mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5144.867mil|Location2.X=5410.926mil|Location1.Y=3460.365mil|Location2.Y=3794.992mil|Absolute=True">NetIC3_13</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="5180680">518.068mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5319.307mil|Location2.X=5473.997mil|Location1.Y=3715.682mil|Location2.Y=3753.688mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5319.307mil|Location2.X=5473.997mil|Location1.Y=3715.682mil|Location2.Y=3753.688mil|Absolute=True">NetIC3_3</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1176390">117.639mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=892.654mil|Location2.X=1022.35mil|Location1.Y=3005.098mil|Location2.Y=3043.098mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=892.654mil|Location2.X=1022.35mil|Location1.Y=3005.098mil|Location2.Y=3043.098mil|Absolute=True">NetJP9_23</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="824742">82.474mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=892.654mil|Location2.X=1021.756mil|Location1.Y=2955.095mil|Location2.Y=3017.622mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=892.654mil|Location2.X=1021.756mil|Location1.Y=2955.095mil|Location2.Y=3017.622mil|Absolute=True">NetJP9_24</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="960762">96.076mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2858.5mil|Location2.X=3072.921mil|Location1.Y=2810.095mil|Location2.Y=2858.095mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2858.5mil|Location2.X=3072.921mil|Location1.Y=2810.095mil|Location2.Y=2858.095mil|Absolute=True">NetL5_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1858507">185.851mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4883.7mil|Location2.X=5076.677mil|Location1.Y=2586.277mil|Location2.Y=2681.711mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4883.7mil|Location2.X=5076.677mil|Location1.Y=2586.277mil|Location2.Y=2681.711mil|Absolute=True">NetPU1_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1229942">122.994mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4373.441mil|Location2.X=4436.559mil|Location1.Y=3584.068mil|Location2.Y=3674mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4373.441mil|Location2.X=4436.559mil|Location1.Y=3584.068mil|Location2.Y=3674mil|Absolute=True">NetQ3_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="621924">62.192mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4377.378mil|Location2.X=4535.693mil|Location1.Y=3705.369mil|Location2.Y=3835.299mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4377.378mil|Location2.X=4535.693mil|Location1.Y=3705.369mil|Location2.Y=3835.299mil|Absolute=True">NetQ3_3</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1782303">178.23mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4377.378mil|Location2.X=4485.69mil|Location1.Y=3730.961mil|Location2.Y=3835.893mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4377.378mil|Location2.X=4485.69mil|Location1.Y=3730.961mil|Location2.Y=3835.893mil|Absolute=True">NetQ3_4</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1240803">124.08mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1987.378mil|Location2.X=2079.003mil|Location1.Y=3510.688mil|Location2.Y=3695.339mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1987.378mil|Location2.X=2079.003mil|Location1.Y=3510.688mil|Location2.Y=3695.339mil|Absolute=True">NetQ5_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1785206">178.521mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4386mil|Location2.X=4480.099mil|Location1.Y=3461.276mil|Location2.Y=3571.477mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4386mil|Location2.X=4480.099mil|Location1.Y=3461.276mil|Location2.Y=3571.477mil|Absolute=True">NetR12_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1275451">127.545mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2990.413mil|Location2.X=3104.417mil|Location1.Y=2818.689mil|Location2.Y=2928.098mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2990.413mil|Location2.X=3104.417mil|Location1.Y=2818.689mil|Location2.Y=2928.098mil|Absolute=True">NetR22_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1386898">138.69mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3040.997mil|Location2.X=3151.661mil|Location1.Y=2818.689mil|Location2.Y=2977.507mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3040.997mil|Location2.X=3151.661mil|Location1.Y=2818.689mil|Location2.Y=2977.507mil|Absolute=True">NetR23_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1722868">172.287mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3196.811mil|Location2.X=3274mil|Location1.Y=2818.689mil|Location2.Y=2946.913mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3196.811mil|Location2.X=3274mil|Location1.Y=2818.689mil|Location2.Y=2946.913mil|Absolute=True">NetR26_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1240496">124.05mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3212.559mil|Location2.X=3324mil|Location1.Y=2818.689mil|Location2.Y=2946.913mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3212.559mil|Location2.X=3324mil|Location1.Y=2818.689mil|Location2.Y=2946.913mil|Absolute=True">NetR27_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1621713">162.171mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3253.205mil|Location2.X=3424mil|Location1.Y=2778.846mil|Location2.Y=2933.095mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3253.205mil|Location2.X=3424mil|Location1.Y=2778.846mil|Location2.Y=2933.095mil|Absolute=True">NetR29_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2371181">237.118mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3253.205mil|Location2.X=3423.413mil|Location1.Y=2763.098mil|Location2.Y=2883.098mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3253.205mil|Location2.X=3423.413mil|Location1.Y=2763.098mil|Location2.Y=2883.098mil|Absolute=True">NetR30_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2018420">201.842mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3253.205mil|Location2.X=3423.413mil|Location1.Y=2731.602mil|Location2.Y=2833.098mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3253.205mil|Location2.X=3423.413mil|Location1.Y=2731.602mil|Location2.Y=2833.098mil|Absolute=True">NetR32_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1824616">182.462mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3165.315mil|Location2.X=3208.997mil|Location1.Y=2470.688mil|Location2.Y=2615.11mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3165.315mil|Location2.X=3208.997mil|Location1.Y=2470.688mil|Location2.Y=2615.11mil|Absolute=True">NetR33_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1151550">115.155mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3120.406mil|Location2.X=3163.095mil|Location1.Y=2905.091mil|Location2.Y=2989.157mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3120.406mil|Location2.X=3163.095mil|Location1.Y=2905.091mil|Location2.Y=2989.157mil|Absolute=True">NetR34_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="512950">51.295mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=800mil|Location2.X=1391.795mil|Location1.Y=1645.091mil|Location2.Y=2519.952mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=800mil|Location2.X=1391.795mil|Location1.Y=1645.091mil|Location2.Y=2519.952mil|Absolute=True">NetR52_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="18228291">1822.829mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1308.205mil|Location2.X=1448.997mil|Location1.Y=2195.688mil|Location2.Y=2394.236mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1308.205mil|Location2.X=1448.997mil|Location1.Y=2195.688mil|Location2.Y=2394.236mil|Absolute=True">NetR53_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2184548">218.455mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4530.764mil|Location2.X=4676.992mil|Location1.Y=2290.803mil|Location2.Y=2337.386mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4530.764mil|Location2.X=4676.992mil|Location1.Y=2290.803mil|Location2.Y=2337.386mil|Absolute=True">NetR58_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="915606">91.561mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4530.764mil|Location2.X=4677.307mil|Location1.Y=2540.803mil|Location2.Y=2587.386mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4530.764mil|Location2.X=4677.307mil|Location1.Y=2540.803mil|Location2.Y=2587.386mil|Absolute=True">NetR59_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="848038">84.804mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1725.406mil|Location2.X=1763.406mil|Location1.Y=2830.091mil|Location2.Y=2909.157mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1725.406mil|Location2.X=1763.406mil|Location1.Y=2830.091mil|Location2.Y=2909.157mil|Absolute=True">NetR69_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="442865">44.287mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1321.587mil|Location2.X=1425.551mil|Location1.Y=3887.685mil|Location2.Y=3938.098mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1321.587mil|Location2.X=1425.551mil|Location1.Y=3887.685mil|Location2.Y=3938.098mil|Absolute=True">NetR83_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="705696">70.57mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1726.587mil|Location2.X=1920mil|Location1.Y=2595.091mil|Location2.Y=2690.095mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1726.587mil|Location2.X=1920mil|Location1.Y=2595.091mil|Location2.Y=2690.095mil|Absolute=True">NetR85_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2001246">200.125mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1851.003mil|Location2.X=1920mil|Location1.Y=2851.095mil|Location2.Y=3032.501mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1851.003mil|Location2.X=1920mil|Location1.Y=2851.095mil|Location2.Y=3032.501mil|Absolute=True">NetR86_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1650445">165.045mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1950mil|Location2.X=1989.003mil|Location1.Y=2851.095mil|Location2.Y=3032.501mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1950mil|Location2.X=1989.003mil|Location1.Y=2851.095mil|Location2.Y=3032.501mil|Absolute=True">NetR87_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1526207">152.621mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1675.406mil|Location2.X=1713.406mil|Location1.Y=2545.091mil|Location2.Y=2633.091mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1675.406mil|Location2.X=1713.406mil|Location1.Y=2545.091mil|Location2.Y=2633.091mil|Absolute=True">OTG_CLK</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="500000">50mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1856mil|Location2.X=1960mil|Location1.Y=2520.095mil|Location2.Y=2690.095mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1856mil|Location2.X=1960mil|Location1.Y=2520.095mil|Location2.Y=2690.095mil|Absolute=True">OTG_DATA0</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1944975">194.498mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1906mil|Location2.X=1980mil|Location1.Y=2520.095mil|Location2.Y=2690.095mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1906mil|Location2.X=1980mil|Location1.Y=2520.095mil|Location2.Y=2690.095mil|Absolute=True">OTG_DATA1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1557107">155.711mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1955.997mil|Location2.X=2000mil|Location1.Y=2520.095mil|Location2.Y=2690.095mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1955.997mil|Location2.X=2000mil|Location1.Y=2520.095mil|Location2.Y=2690.095mil|Absolute=True">OTG_DATA2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1432856">143.286mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2005.997mil|Location2.X=2043.997mil|Location1.Y=2520.095mil|Location2.Y=2690.095mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2005.997mil|Location2.X=2043.997mil|Location1.Y=2520.095mil|Location2.Y=2690.095mil|Absolute=True">OTG_DATA3</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1391434">139.143mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2030mil|Location2.X=2093.997mil|Location1.Y=2520.095mil|Location2.Y=2690.095mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2030mil|Location2.X=2093.997mil|Location1.Y=2520.095mil|Location2.Y=2690.095mil|Absolute=True">OTG_DATA4</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1515698">151.57mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2065.5mil|Location2.X=2144mil|Location1.Y=2520.095mil|Location2.Y=2705.595mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2065.5mil|Location2.X=2144mil|Location1.Y=2520.095mil|Location2.Y=2705.595mil|Absolute=True">OTG_DATA5</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1982635">198.264mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2065.5mil|Location2.X=2193.997mil|Location1.Y=2520.095mil|Location2.Y=2725.595mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2065.5mil|Location2.X=2193.997mil|Location1.Y=2520.095mil|Location2.Y=2725.595mil|Absolute=True">OTG_DATA6</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2448307">244.831mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2065.5mil|Location2.X=2244mil|Location1.Y=2520.095mil|Location2.Y=2785.595mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2065.5mil|Location2.X=2244mil|Location1.Y=2520.095mil|Location2.Y=2785.595mil|Absolute=True">OTG_DATA7</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="3255427">325.543mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1776.594mil|Location2.X=1904.5mil|Location1.Y=2680.098mil|Location2.Y=2725.595mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1776.594mil|Location2.X=1904.5mil|Location1.Y=2680.098mil|Location2.Y=2725.595mil|Absolute=True">OTG_DIR</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1018105">101.811mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1806mil|Location2.X=1940mil|Location1.Y=2520.095mil|Location2.Y=2690.095mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1806mil|Location2.X=1940mil|Location1.Y=2520.095mil|Location2.Y=2690.095mil|Absolute=True">OTG_NXT</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2104386">210.439mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1776.594mil|Location2.X=1904.5mil|Location1.Y=2730.098mil|Location2.Y=2768.098mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1776.594mil|Location2.X=1904.5mil|Location1.Y=2730.098mil|Location2.Y=2768.098mil|Absolute=True">OTG_STP</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="976683">97.668mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=892.654mil|Location2.X=1986.004mil|Location1.Y=2025.724mil|Location2.Y=3161.831mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=892.654mil|Location2.X=1986.004mil|Location1.Y=2025.724mil|Location2.Y=3161.831mil|Absolute=True">P15</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="15826920">1582.692mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=845.997mil|Location2.X=1961.004mil|Location1.Y=2025.724mil|Location2.Y=3142.312mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=845.997mil|Location2.X=1961.004mil|Location1.Y=2025.724mil|Location2.Y=3142.312mil|Absolute=True">P16</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="16266620">1626.662mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=892.654mil|Location2.X=2576.004mil|Location1.Y=2025.724mil|Location2.Y=3405.098mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=892.654mil|Location2.X=2576.004mil|Location1.Y=2025.724mil|Location2.Y=3405.098mil|Absolute=True">P19</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="23788881">2378.888mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1021.378mil|Location2.X=6457.898mil|Location1.Y=2665.077mil|Location2.Y=4305.905mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1021.378mil|Location2.X=6457.898mil|Location1.Y=2665.077mil|Location2.Y=4305.905mil|Absolute=True">PGND</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="65092076">6509.208mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1393.599mil|Location2.X=1415.378mil|Location1.Y=2025.724mil|Location2.Y=2112.465mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1393.599mil|Location2.X=1415.378mil|Location1.Y=2025.724mil|Location2.Y=2112.465mil|Absolute=True">PS_MIO0</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3193.994mil|Location2.X=3401.004mil|Location1.Y=2025.724mil|Location2.Y=2407.507mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3193.994mil|Location2.X=3401.004mil|Location1.Y=2025.724mil|Location2.Y=2407.507mil|Absolute=True">PS_MIO16</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="8695971">869.597mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3253.992mil|Location2.X=3410.001mil|Location1.Y=1702.89mil|Location2.Y=2407.507mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3253.992mil|Location2.X=3410.001mil|Location1.Y=1702.89mil|Location2.Y=2407.507mil|Absolute=True">PS_MIO17</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="8634654">863.465mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3303.992mil|Location2.X=3425mil|Location1.Y=1702.89mil|Location2.Y=2407.507mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3303.992mil|Location2.X=3425mil|Location1.Y=1702.89mil|Location2.Y=2407.507mil|Absolute=True">PS_MIO18</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="8638069">863.807mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3340.209mil|Location2.X=3480mil|Location1.Y=1702.89mil|Location2.Y=2407.504mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3340.209mil|Location2.X=3480mil|Location1.Y=1702.89mil|Location2.Y=2407.504mil|Absolute=True">PS_MIO19</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="8636659">863.666mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3363.996mil|Location2.X=3505mil|Location1.Y=1702.89mil|Location2.Y=2408.098mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3363.996mil|Location2.X=3505mil|Location1.Y=1702.89mil|Location2.Y=2408.098mil|Absolute=True">PS_MIO20</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="8635787">863.579mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3306.984mil|Location2.X=3585mil|Location1.Y=1948.091mil|Location2.Y=2408.098mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3306.984mil|Location2.X=3585mil|Location1.Y=1948.091mil|Location2.Y=2408.098mil|Absolute=True">PS_MIO21</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="8657209">865.721mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3103.992mil|Location2.X=3435.063mil|Location1.Y=1702.89mil|Location2.Y=2407.507mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3103.992mil|Location2.X=3435.063mil|Location1.Y=1702.89mil|Location2.Y=2407.507mil|Absolute=True">PS_MIO22</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="8634653">863.465mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2920.997mil|Location2.X=3399.63mil|Location1.Y=2025.724mil|Location2.Y=2407.507mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2920.997mil|Location2.X=3399.63mil|Location1.Y=2025.724mil|Location2.Y=2407.507mil|Absolute=True">PS_MIO23</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="8634652">863.465mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2970.997mil|Location2.X=3423.252mil|Location1.Y=2025.724mil|Location2.Y=2407.507mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2970.997mil|Location2.X=3423.252mil|Location1.Y=2025.724mil|Location2.Y=2407.507mil|Absolute=True">PS_MIO24</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="8634653">863.465mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3003.992mil|Location2.X=3316.004mil|Location1.Y=1923.091mil|Location2.Y=2407.507mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3003.992mil|Location2.X=3316.004mil|Location1.Y=1923.091mil|Location2.Y=2407.507mil|Absolute=True">PS_MIO25</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="8641056">864.106mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3070.997mil|Location2.X=3446.874mil|Location1.Y=2025.724mil|Location2.Y=2407.507mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3070.997mil|Location2.X=3446.874mil|Location1.Y=2025.724mil|Location2.Y=2407.507mil|Absolute=True">PS_MIO26</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="8634653">863.465mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2853.992mil|Location2.X=3318.446mil|Location1.Y=1702.89mil|Location2.Y=2407.507mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2853.992mil|Location2.X=3318.446mil|Location1.Y=1702.89mil|Location2.Y=2407.507mil|Absolute=True">PS_MIO27</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="8634659">863.466mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1677.063mil|Location2.X=2093.997mil|Location1.Y=2025.724mil|Location2.Y=2506.913mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1677.063mil|Location2.X=2093.997mil|Location1.Y=2025.724mil|Location2.Y=2506.913mil|Absolute=True">PS_MIO28</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="16545426">1654.543mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1590.24mil|Location2.X=1763.413mil|Location1.Y=2025.724mil|Location2.Y=2718.098mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1590.24mil|Location2.X=1763.413mil|Location1.Y=2025.724mil|Location2.Y=2718.098mil|Absolute=True">PS_MIO29</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="16539379">1653.938mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1455mil|Location2.X=1763.413mil|Location1.Y=1774.094mil|Location2.Y=2785.098mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1455mil|Location2.X=1763.413mil|Location1.Y=1774.094mil|Location2.Y=2785.098mil|Absolute=True">PS_MIO30</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="16545605">1654.561mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1520mil|Location2.X=1861.004mil|Location1.Y=1702.89mil|Location2.Y=2506.913mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1520mil|Location2.X=1861.004mil|Location1.Y=1702.89mil|Location2.Y=2506.913mil|Absolute=True">PS_MIO31</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="16544866">1654.487mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1558.228mil|Location2.X=2012.602mil|Location1.Y=2025.724mil|Location2.Y=2568.129mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1558.228mil|Location2.X=2012.602mil|Location1.Y=2025.724mil|Location2.Y=2568.129mil|Absolute=True">PS_MIO32</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="16853662">1685.366mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1518.996mil|Location2.X=1961.004mil|Location1.Y=1702.89mil|Location2.Y=2506.913mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1518.996mil|Location2.X=1961.004mil|Location1.Y=1702.89mil|Location2.Y=2506.913mil|Absolute=True">PS_MIO33</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="16544417">1654.442mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1557.689mil|Location2.X=1993.997mil|Location1.Y=2025.724mil|Location2.Y=2506.913mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1557.689mil|Location2.X=1993.997mil|Location1.Y=2025.724mil|Location2.Y=2506.913mil|Absolute=True">PS_MIO34</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="16710408">1671.041mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1589.679mil|Location2.X=2059.606mil|Location1.Y=1702.89mil|Location2.Y=2506.913mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1589.679mil|Location2.X=2059.606mil|Location1.Y=1702.89mil|Location2.Y=2506.913mil|Absolute=True">PS_MIO35</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="16525389">1652.539mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1463.996mil|Location2.X=1781.004mil|Location1.Y=1702.89mil|Location2.Y=2583.091mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1463.996mil|Location2.X=1781.004mil|Location1.Y=1702.89mil|Location2.Y=2583.091mil|Absolute=True">PS_MIO36</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="16541698">1654.17mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1578.996mil|Location2.X=2161.004mil|Location1.Y=1702.89mil|Location2.Y=2506.913mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1578.996mil|Location2.X=2161.004mil|Location1.Y=1702.89mil|Location2.Y=2506.913mil|Absolute=True">PS_MIO37</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="16539379">1653.938mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1570.764mil|Location2.X=2211.001mil|Location1.Y=1702.89mil|Location2.Y=2506.913mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1570.764mil|Location2.X=2211.001mil|Location1.Y=1702.89mil|Location2.Y=2506.913mil|Absolute=True">PS_MIO38</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="16627111">1662.711mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1628.996mil|Location2.X=2261.004mil|Location1.Y=2025.724mil|Location2.Y=2506.913mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1628.996mil|Location2.X=2261.004mil|Location1.Y=2025.724mil|Location2.Y=2506.913mil|Absolute=True">PS_MIO39</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="16853697">1685.37mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1464.465mil|Location2.X=1663.413mil|Location1.Y=2025.724mil|Location2.Y=2818.098mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1464.465mil|Location2.X=1663.413mil|Location1.Y=2025.724mil|Location2.Y=2818.098mil|Absolute=True">PS_MIO7</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="8585557">858.556mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=819.409mil|Location2.X=1426.004mil|Location1.Y=1702.89mil|Location2.Y=2765.098mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=819.409mil|Location2.X=1426.004mil|Location1.Y=1702.89mil|Location2.Y=2765.098mil|Absolute=True">PS_MIO8</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="13708744">1370.874mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=819.409mil|Location2.X=1471.004mil|Location1.Y=1914.094mil|Location2.Y=2715.098mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=819.409mil|Location2.X=1471.004mil|Location1.Y=1914.094mil|Location2.Y=2715.098mil|Absolute=True">PS_MIO9</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="12979745">1297.975mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1488.087mil|Location2.X=3286.795mil|Location1.Y=1964.094mil|Location2.Y=2702.201mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1488.087mil|Location2.X=3286.795mil|Location1.Y=1964.094mil|Location2.Y=2702.201mil|Absolute=True">PS_POR_B</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="23235797">2323.58mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1508.996mil|Location2.X=2740mil|Location1.Y=1954.094mil|Location2.Y=3522.507mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1508.996mil|Location2.X=2740mil|Location1.Y=1954.094mil|Location2.Y=3522.507mil|Absolute=True">PS_SRST_B</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="30381302">3038.13mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1346.587mil|Location2.X=1384.587mil|Location1.Y=1645.091mil|Location2.Y=1789.63mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1346.587mil|Location2.X=1384.587mil|Location1.Y=1645.091mil|Location2.Y=1789.63mil|Absolute=True">QSPI_D2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="836050">83.605mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1361mil|Location2.X=1399mil|Location1.Y=2025.724mil|Location2.Y=2183.095mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1361mil|Location2.X=1399mil|Location1.Y=2025.724mil|Location2.Y=2183.095mil|Absolute=True">QSPI_D3</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="953588">95.359mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=892.654mil|Location2.X=2526.004mil|Location1.Y=2025.724mil|Location2.Y=3357.749mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=892.654mil|Location2.X=2526.004mil|Location1.Y=2025.724mil|Location2.Y=3357.749mil|Absolute=True">R16</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="22514088">2251.409mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=846.154mil|Location2.X=2551.004mil|Location1.Y=2025.724mil|Location2.Y=3378.366mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=846.154mil|Location2.X=2551.004mil|Location1.Y=2025.724mil|Location2.Y=3378.366mil|Absolute=True">R17</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="23724074">2372.407mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=845.65mil|Location2.X=2006.004mil|Location1.Y=2025.724mil|Location2.Y=3181.516mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=845.65mil|Location2.X=2006.004mil|Location1.Y=2025.724mil|Location2.Y=3181.516mil|Absolute=True">R18</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="16967970">1696.797mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1508.996mil|Location2.X=2660.858mil|Location1.Y=2025.724mil|Location2.Y=3522.501mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1508.996mil|Location2.X=2660.858mil|Location1.Y=2025.724mil|Location2.Y=3522.501mil|Absolute=True">RESET_POR</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="29622872">2962.287mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3120.997mil|Location2.X=3167.409mil|Location1.Y=2420.688mil|Location2.Y=2615.11mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3120.997mil|Location2.X=3167.409mil|Location1.Y=2420.688mil|Location2.Y=2615.11mil|Absolute=True">RGMII_RXCK</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1662860">166.286mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2920.997mil|Location2.X=3088.669mil|Location1.Y=2420.688mil|Location2.Y=2615.11mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2920.997mil|Location2.X=3088.669mil|Location1.Y=2420.688mil|Location2.Y=2615.11mil|Absolute=True">RGMII_RXD0</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2663054">266.305mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2970.997mil|Location2.X=3120.165mil|Location1.Y=2420.688mil|Location2.Y=2615.11mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2970.997mil|Location2.X=3120.165mil|Location1.Y=2420.688mil|Location2.Y=2615.11mil|Absolute=True">RGMII_RXD1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2527829">252.783mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3020.997mil|Location2.X=3135.913mil|Location1.Y=2420.688mil|Location2.Y=2615.11mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3020.997mil|Location2.X=3135.913mil|Location1.Y=2420.688mil|Location2.Y=2615.11mil|Absolute=True">RGMII_RXD2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2180928">218.093mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3070.997mil|Location2.X=3151.661mil|Location1.Y=2420.688mil|Location2.Y=2615.11mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3070.997mil|Location2.X=3151.661mil|Location1.Y=2420.688mil|Location2.Y=2615.11mil|Absolute=True">RGMII_RXD3</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1804736">180.474mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2870.997mil|Location2.X=3072.921mil|Location1.Y=2420.688mil|Location2.Y=2615.11mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2870.997mil|Location2.X=3072.921mil|Location1.Y=2420.688mil|Location2.Y=2615.11mil|Absolute=True">RGMII_RXDV</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2862217">286.222mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3196.811mil|Location2.X=3258.997mil|Location1.Y=2420.688mil|Location2.Y=2615.11mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3196.811mil|Location2.X=3258.997mil|Location1.Y=2420.688mil|Location2.Y=2615.11mil|Absolute=True">RGMII_TXCK</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1728196">172.82mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3212.559mil|Location2.X=3308.997mil|Location1.Y=2420.688mil|Location2.Y=2615.11mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3212.559mil|Location2.X=3308.997mil|Location1.Y=2420.688mil|Location2.Y=2615.11mil|Absolute=True">RGMII_TXD0</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1870073">187.007mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3228.307mil|Location2.X=3358.997mil|Location1.Y=2420.688mil|Location2.Y=2615.11mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3228.307mil|Location2.X=3358.997mil|Location1.Y=2420.688mil|Location2.Y=2615.11mil|Absolute=True">RGMII_TXD1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2011949">201.195mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3253.205mil|Location2.X=3409.597mil|Location1.Y=2420.685mil|Location2.Y=2639.209mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3253.205mil|Location2.X=3409.597mil|Location1.Y=2420.685mil|Location2.Y=2639.209mil|Absolute=True">RGMII_TXD2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2405554">240.555mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3253.205mil|Location2.X=3459.594mil|Location1.Y=2421.279mil|Location2.Y=2654.957mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3253.205mil|Location2.X=3459.594mil|Location1.Y=2421.279mil|Location2.Y=2654.957mil|Absolute=True">RGMII_TXD3</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="3016423">301.642mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3253.205mil|Location2.X=3509.594mil|Location1.Y=2421.279mil|Location2.Y=2670.705mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3253.205mil|Location2.X=3509.594mil|Location1.Y=2421.279mil|Location2.Y=2670.705mil|Absolute=True">RGMII_TXEN</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="3545258">354.526mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=892.654mil|Location2.X=1936.004mil|Location1.Y=2025.724mil|Location2.Y=3122.461mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=892.654mil|Location2.X=1936.004mil|Location1.Y=2025.724mil|Location2.Y=3122.461mil|Absolute=True">T14</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="15082723">1508.272mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=845.65mil|Location2.X=1911.004mil|Location1.Y=2025.724mil|Location2.Y=3102.776mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=845.65mil|Location2.X=1911.004mil|Location1.Y=2025.724mil|Location2.Y=3102.776mil|Absolute=True">T15</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="15525817">1552.582mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=892.654mil|Location2.X=2031.004mil|Location1.Y=2025.724mil|Location2.Y=3201.202mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=892.654mil|Location2.X=2031.004mil|Location1.Y=2025.724mil|Location2.Y=3201.202mil|Absolute=True">T17</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="16495600">1649.56mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=892.654mil|Location2.X=1866.004mil|Location1.Y=2025.724mil|Location2.Y=3083.091mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=892.654mil|Location2.X=1866.004mil|Location1.Y=2025.724mil|Location2.Y=3083.091mil|Absolute=True">U13</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="14227477">1422.748mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1045mil|Location2.X=1989.003mil|Location1.Y=3045.682mil|Location2.Y=3862.52mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1045mil|Location2.X=1989.003mil|Location1.Y=3045.682mil|Location2.Y=3862.52mil|Absolute=True">USB_5V</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="16661872">1666.187mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1160.433mil|Location2.X=2180.858mil|Location1.Y=2851.095mil|Location2.Y=3807.402mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1160.433mil|Location2.X=2180.858mil|Location1.Y=2851.095mil|Location2.Y=3807.402mil|Absolute=True">USB_HOST_N</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="18525421">1852.542mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1160.433mil|Location2.X=2160.858mil|Location1.Y=2851.095mil|Location2.Y=3769.095mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1160.433mil|Location2.X=2160.858mil|Location1.Y=2851.095mil|Location2.Y=3769.095mil|Absolute=True">USB_HOST_P</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="18194050">1819.405mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1900.997mil|Location2.X=1940mil|Location1.Y=2851.095mil|Location2.Y=3032.507mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1900.997mil|Location2.X=1940mil|Location1.Y=2851.095mil|Location2.Y=3032.507mil|Absolute=True">USB_ID</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1526271">152.627mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1490.449mil|Location2.X=2230mil|Location1.Y=2851.095mil|Location2.Y=3937.939mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1490.449mil|Location2.X=2230mil|Location1.Y=2851.095mil|Location2.Y=3937.939mil|Absolute=True">USB_OTG_CPEN</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="16839295">1683.93mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1676.003mil|Location2.X=1904.5mil|Location1.Y=2780.098mil|Location2.Y=2917.501mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1676.003mil|Location2.X=1904.5mil|Location1.Y=2780.098mil|Location2.Y=2917.501mil|Absolute=True">USB_RESET_B</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="3002155">300.216mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1776.587mil|Location2.X=1904.5mil|Location1.Y=2815.595mil|Location2.Y=2868.091mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1776.587mil|Location2.X=1904.5mil|Location1.Y=2815.595mil|Location2.Y=2868.091mil|Absolute=True">USB_XTAL</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1047164">104.716mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=892.654mil|Location2.X=2431.004mil|Location1.Y=2025.724mil|Location2.Y=3240.571mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=892.654mil|Location2.X=2431.004mil|Location1.Y=2025.724mil|Location2.Y=3240.571mil|Absolute=True">V12</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="20278444">2027.844mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2421.378mil|Location2.X=2916.004mil|Location1.Y=1702.89mil|Location2.Y=4231.992mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2421.378mil|Location2.X=2916.004mil|Location1.Y=1702.89mil|Location2.Y=4231.992mil|Absolute=True">V20</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="26102808">2610.281mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4715.252mil|Location2.X=5319mil|Location1.Y=1870.094mil|Location2.Y=2067.465mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4715.252mil|Location2.X=5319mil|Location1.Y=1870.094mil|Location2.Y=2067.465mil|Absolute=True">Vplc</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="7127909">712.791mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=846.154mil|Location2.X=2456.004mil|Location1.Y=2025.724mil|Location2.Y=3260.256mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=846.154mil|Location2.X=2456.004mil|Location1.Y=2025.724mil|Location2.Y=3260.256mil|Absolute=True">W13</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="21611025">2161.103mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2021.378mil|Location2.X=2891.004mil|Location1.Y=1702.89mil|Location2.Y=4231.992mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2021.378mil|Location2.X=2891.004mil|Location1.Y=1702.89mil|Location2.Y=4231.992mil|Absolute=True">W20</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="29065858">2906.586mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1221.378mil|Location2.X=2846.004mil|Location1.Y=1702.89mil|Location2.Y=4231.992mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1221.378mil|Location2.X=2846.004mil|Location1.Y=1702.89mil|Location2.Y=4231.992mil|Absolute=True">Y18</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="35200676">3520.068mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1621.378mil|Location2.X=2869.817mil|Location1.Y=1702.89mil|Location2.Y=4231.992mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Git_repository\OurEDA\OurEDA-P1K\Hardware\OurEDA-P1K\OurEDA-P1K.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1621.378mil|Location2.X=2869.817mil|Location1.Y=1702.89mil|Location2.Y=4231.992mil|Absolute=True">Y19</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="32090913">3209.091mils
+			</a></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

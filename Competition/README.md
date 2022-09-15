@@ -2,6 +2,8 @@
 
 基于Xilinx Zynq-7010的水下机器人（ROV/AUV）单芯片解决方案，使用单片Zynq取代传统ROV中常见的高性能ARM+高实时性MCU架构，并利用FPGA将原本需要外接加速器的图像处理功能集成到片上，从而节省宝贵的舱内空间。PS搭载嵌入式Linux，负责高性能的USB摄像头采集、水下图像处理、网络视频推流任务。PL构建RV32I软核，三级流水双发射优化性能-面积比，配备TCM、内核定时器，支持外部中断，配套GPIO、UART、PWM、I2C、DVP-DMA、ISP加速器外设。SoC通过AXI接口读写PS端DDR数据并使用EMIO串口接收PS端转发指令与上位机实时通信，负责高实时性的水下机器人姿态控制、多传感器数据采集、DVP摄像头图像ISP任务。拟根据脉动阵列架构实现卷积加速器，配合PS部分完成基于YOLOv7的水下目标识别任务
 
+> 基于Xilinx Zynq-7010的水下机器人（ROV/AUV）单芯片解决方案，使用单片Zynq取代传统ROV中常见的高性能ARM+高实时性MCU架构，并利用FPGA将原本需要外接加速器的图像处理功能集成到片上，从而节省宝贵的舱内空间。PS搭载嵌入式Linux，负责高性能的USB摄像头采集、水下图像处理、网络视频推流任务。PL构建RV32I软核，三级流水双发射优化性能-面积比，配备TCM、内核定时器，支持外部中断，配套GPIO、UART、PWM、I2C、DVP-DMA、ISP加速器外设。SoC通过AXI接口读写PS端DDR数据并使用EMIO串口接收PS端转发指令与上位机实时通信，负责高实时性的水下机器人姿态控制、多传感器数据采集、DVP摄像头图像ISP任务。拟根据脉动阵列架构实现卷积加速器，配合PS部分完成基于YOLOv7的水下目标识别任务
+
 * 硬件
 
     核心板最小系统移植√
@@ -20,25 +22,30 @@
 
     外围电路√
 
-    PCB layout
+    PCB layout√
 
 * PS
 
-    用petalinux完成核心板的嵌入式linux移植
+    * petalinux环境搭建
 
-    以太网、USB设备树
+        用petalinux完成核心板的嵌入式linux移植
 
-    EMIO、AXI驱动
+    * 以太网、USB设备树、EMIO-UART、AXI驱动
 
-    移植openwrt到7010
+    * 移植openwrt
 
-    移植mjpg-streamer或motion
+    * 移植ser2net
 
-    移植ser2net
+    * 移植mjpg-streamer或motion
 
-    移植xilinx-opencv库
+    * 移植xilinx-opencv库
 
 * PL
+
+    * 硬件验证与软件测试环境搭建
+
+        IVerilog+Verilator+GTKWave+OSS-CAD（Yosys）
+
 
     * RV32I软核编写
 
@@ -81,6 +88,7 @@
         
 
         
+
 
 
 ​    

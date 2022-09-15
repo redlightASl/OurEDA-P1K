@@ -1,0 +1,10 @@
+Removed Pin From Net: NetName=3V3A Pin=C50-2
+Removed Pin From Net: NetName=3V3A Pin=X2-4
+Added Pin To Net: NetName=3V3 Pin=C50-2
+Added Pin To Net: NetName=3V3 Pin=X2-4
+Added Room: Name=OurEDA-P1K_cam
+Added Room: Name=OurEDA-P1K_Network
+Added Room: Name=OurEDA-P1K_PowerManagement
+Added Room: Name=OurEDA-P1K_sensor
+Added Room: Name=OurEDA-P1K_usb
+Added Room: Name=OurEDA-P1K_zynq

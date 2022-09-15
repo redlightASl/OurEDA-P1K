@@ -220,6 +220,10 @@ DocumentUniqueId=MENPRXJU
 DocumentPath=Project Outputs for OurEDA-P1K\Design Rule Check - OurEDA-P1K.html
 DItemRevisionGUID=
 
+[GeneratedDocument2]
+DocumentPath=Project Outputs for OurEDA-P1K\Net Status - OurEDA-P1K.html
+DItemRevisionGUID=
+
 [Configuration1]
 Name=Sources
 ParameterCount=0

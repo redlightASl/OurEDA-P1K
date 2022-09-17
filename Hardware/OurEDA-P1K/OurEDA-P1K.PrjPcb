@@ -146,7 +146,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=QIFGTVOO
 
 [Document7]
 DocumentPath=..\Lib-ADP\Lib-ADP\MySchLib.SchLib
@@ -215,6 +215,23 @@ ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=MENPRXJU
+
+[Document11]
+DocumentPath=OurEDA-P1K_sd.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=6
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=JPHBUVEV
 
 [GeneratedDocument1]
 DocumentPath=Project Outputs for OurEDA-P1K\Design Rule Check - OurEDA-P1K.html

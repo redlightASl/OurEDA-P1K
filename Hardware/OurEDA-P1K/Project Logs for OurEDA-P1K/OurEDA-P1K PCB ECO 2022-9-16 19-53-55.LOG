@@ -1,0 +1,9 @@
+Change Component Comment : Designator=C59 Old Comment=10uF New Comment=102
+Change Net Name : Old Net Name=USB_HOST_N New Net Name=USB_HOST_P
+Change Net Name : Old Net Name=USB_HOST_P New Net Name=USB_HOST_N
+Added Room: Name=OurEDA-P1K_cam
+Added Room: Name=OurEDA-P1K_Network
+Added Room: Name=OurEDA-P1K_PowerManagement
+Added Room: Name=OurEDA-P1K_sensor
+Added Room: Name=OurEDA-P1K_usb
+Added Room: Name=OurEDA-P1K_zynq

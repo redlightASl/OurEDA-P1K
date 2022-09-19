@@ -1,0 +1,7 @@
+verilog xil_defaultlib --include "D:/xilinx/Vivado/2020.2/data/xilinx_vip/include" --include "../../../../OurEDA-P1K_zynq.gen/sources_1/bd/design_main/ipshared/ec67/hdl" --include "../../../../OurEDA-P1K_zynq.gen/sources_1/bd/design_main/ipshared/34f8/hdl" \
+"../../../bd/design_main/ip/design_main_processing_system7_0_0/sim/design_main_processing_system7_0_0.v" \
+"../../../bd/design_main/sim/design_main.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort

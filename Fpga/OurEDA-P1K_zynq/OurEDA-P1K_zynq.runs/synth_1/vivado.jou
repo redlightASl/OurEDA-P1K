@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Mon Sep 19 15:44:06 2022
+# Process ID: 22096
+# Current directory: F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/OurEDA-P1K_zynq/OurEDA-P1K_zynq.runs/synth_1
+# Command line: vivado.exe -log design_main_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_main_wrapper.tcl
+# Log file: F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/OurEDA-P1K_zynq/OurEDA-P1K_zynq.runs/synth_1/design_main_wrapper.vds
+# Journal file: F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/OurEDA-P1K_zynq/OurEDA-P1K_zynq.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source design_main_wrapper.tcl -notrace

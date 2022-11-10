@@ -1,0 +1,435 @@
+12:01:18 DEBUG : Logs will be stored at 'I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/IDE.log'.
+12:01:22 INFO  : Launching XSCT server: xsct.bat -n  -interactive I:\FPGA\OurEDA_P1K\micro_blaze_ps_v1\skd_Micro_a_A9_v3\temp_xsdb_launch_script.tcl
+12:01:24 INFO  : Registering command handlers for Vitis TCF services
+12:01:24 INFO  : Platform repository initialization has completed.
+12:01:26 INFO  : XSCT server has started successfully.
+12:01:26 INFO  : Successfully done setting XSCT server connection channel  
+12:01:26 INFO  : plnx-install-location is set to ''
+12:01:26 INFO  : Successfully done query RDI_DATADIR 
+12:01:26 INFO  : Successfully done setting workspace for the tool. 
+12:02:34 INFO  : Result from executing command 'getProjects': microblaze
+12:02:34 INFO  : Result from executing command 'getPlatforms': xilinx_zcu102_base_202210_1|D:/Xilinx/Vitis/2022.1/base_platforms/xilinx_zcu102_base_202210_1/xilinx_zcu102_base_202210_1.xpfm;xilinx_zcu102_base_dfx_202210_1|D:/Xilinx/Vitis/2022.1/base_platforms/xilinx_zcu102_base_dfx_202210_1/xilinx_zcu102_base_dfx_202210_1.xpfm;xilinx_zcu104_base_202210_1|D:/Xilinx/Vitis/2022.1/base_platforms/xilinx_zcu104_base_202210_1/xilinx_zcu104_base_202210_1.xpfm
+12:02:34 WARN  : An unexpected exception occurred in the module 'platform project logging'
+12:02:35 INFO  : Platform 'microblaze' is added to custom repositories.
+12:02:45 INFO  : Platform 'microblaze' is added to custom repositories.
+12:03:32 INFO  : Result from executing command 'getProjects': ARM;microblaze
+12:03:32 INFO  : Result from executing command 'getPlatforms': microblaze|I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/microblaze/export/microblaze/microblaze.xpfm;xilinx_zcu102_base_202210_1|D:/Xilinx/Vitis/2022.1/base_platforms/xilinx_zcu102_base_202210_1/xilinx_zcu102_base_202210_1.xpfm;xilinx_zcu102_base_dfx_202210_1|D:/Xilinx/Vitis/2022.1/base_platforms/xilinx_zcu102_base_dfx_202210_1/xilinx_zcu102_base_dfx_202210_1.xpfm;xilinx_zcu104_base_202210_1|D:/Xilinx/Vitis/2022.1/base_platforms/xilinx_zcu104_base_202210_1/xilinx_zcu104_base_202210_1.xpfm
+12:03:33 INFO  : Platform 'ARM' is added to custom repositories.
+12:03:42 INFO  : Platform 'ARM' is added to custom repositories.
+12:06:05 INFO  : Result from executing command 'getProjects': ARM;microblaze
+12:06:05 INFO  : Result from executing command 'getPlatforms': ARM|I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/ARM/export/ARM/ARM.xpfm;microblaze|I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/microblaze/export/microblaze/microblaze.xpfm;xilinx_zcu102_base_202210_1|D:/Xilinx/Vitis/2022.1/base_platforms/xilinx_zcu102_base_202210_1/xilinx_zcu102_base_202210_1.xpfm;xilinx_zcu102_base_dfx_202210_1|D:/Xilinx/Vitis/2022.1/base_platforms/xilinx_zcu102_base_dfx_202210_1/xilinx_zcu102_base_dfx_202210_1.xpfm;xilinx_zcu104_base_202210_1|D:/Xilinx/Vitis/2022.1/base_platforms/xilinx_zcu104_base_202210_1/xilinx_zcu104_base_202210_1.xpfm
+12:06:06 INFO  : Checking for BSP changes to sync application flags for project 'lwip'...
+12:06:06 INFO  : Updating application flags with new BSP settings...
+12:06:06 INFO  : Successfully updated application flags for project lwip.
+12:06:50 INFO  : Result from executing command 'getProjects': ARM;microblaze
+12:06:50 INFO  : Result from executing command 'getPlatforms': ARM|I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/ARM/export/ARM/ARM.xpfm;microblaze|I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/microblaze/export/microblaze/microblaze.xpfm;xilinx_zcu102_base_202210_1|D:/Xilinx/Vitis/2022.1/base_platforms/xilinx_zcu102_base_202210_1/xilinx_zcu102_base_202210_1.xpfm;xilinx_zcu102_base_dfx_202210_1|D:/Xilinx/Vitis/2022.1/base_platforms/xilinx_zcu102_base_dfx_202210_1/xilinx_zcu102_base_dfx_202210_1.xpfm;xilinx_zcu104_base_202210_1|D:/Xilinx/Vitis/2022.1/base_platforms/xilinx_zcu104_base_202210_1/xilinx_zcu104_base_202210_1.xpfm
+12:06:50 INFO  : Checking for BSP changes to sync application flags for project 'freertos'...
+12:07:43 INFO  : Checking for BSP changes to sync application flags for project 'FSBL'...
+12:08:30 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:08:30 INFO  : Jtag cable 'Platform Cable USB II 13724327082d01' is selected.
+12:08:30 INFO  : 'jtag frequency' command is executed.
+12:08:30 INFO  : Context for 'APU' is selected.
+12:08:30 INFO  : System reset is completed.
+12:08:33 INFO  : 'after 3000' command is executed.
+12:08:33 INFO  : 'targets -set -filter {jtag_cable_name =~ "Platform Cable USB II 13724327082d01" && level==0 && jtag_device_ctx=="jsn-DLC10-13724327082d01-13722093-0"}' command is executed.
+12:08:39 INFO  : Device configured successfully with "I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/lwip/_ide/bitstream/sys_wrapper.bit"
+12:08:39 INFO  : Context for 'APU' is selected.
+12:08:39 INFO  : Hardware design and registers information is loaded from 'I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/ARM/export/ARM/hw/sys_wrapper.xsa'.
+12:08:39 INFO  : 'configparams force-mem-access 1' command is executed.
+12:08:39 INFO  : Context for 'APU' is selected.
+12:08:39 INFO  : Sourcing of 'I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/lwip/_ide/psinit/ps7_init.tcl' is done.
+12:08:40 INFO  : 'ps7_init' command is executed.
+12:08:40 INFO  : 'ps7_post_config' command is executed.
+12:08:40 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+12:08:40 INFO  : Context for processor 'microblaze_0' is selected.
+12:08:41 INFO  : The application 'I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/freertos/Debug/freertos.elf' is downloaded to processor 'microblaze_0'.
+12:08:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:08:43 INFO  : The application 'I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/lwip/Debug/lwip.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:08:43 INFO  : 'configparams force-mem-access 0' command is executed.
+12:08:43 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Platform Cable USB II 13724327082d01" && level==0 && jtag_device_ctx=="jsn-DLC10-13724327082d01-13722093-0"}
+fpga -file I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/lwip/_ide/bitstream/sys_wrapper.bit -no-revision-check
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/ARM/export/ARM/hw/sys_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/lwip/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/freertos/Debug/freertos.elf
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/lwip/Debug/lwip.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:08:43 INFO  : Context for processor 'microblaze_0' is selected.
+12:08:43 INFO  : 'con' command is executed.
+12:08:43 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:08:43 INFO  : 'con' command is executed.
+12:08:43 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+12:08:43 INFO  : Launch script is exported to file 'I:\FPGA\OurEDA_P1K\micro_blaze_ps_v1\skd_Micro_a_A9_v3\freertos_system\_ide\scripts\debugger_lwip-default.tcl'
+12:09:20 INFO  : Checking for BSP changes to sync application flags for project 'freertos'...
+12:09:27 INFO  : Disconnected from the channel tcfchan#5.
+12:09:28 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:09:28 INFO  : Jtag cable 'Platform Cable USB II 13724327082d01' is selected.
+12:09:28 INFO  : 'jtag frequency' command is executed.
+12:09:28 INFO  : Context for 'APU' is selected.
+12:09:28 INFO  : System reset is completed.
+12:09:31 INFO  : 'after 3000' command is executed.
+12:09:31 INFO  : 'targets -set -filter {jtag_cable_name =~ "Platform Cable USB II 13724327082d01" && level==0 && jtag_device_ctx=="jsn-DLC10-13724327082d01-13722093-0"}' command is executed.
+12:09:37 INFO  : Device configured successfully with "I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/lwip/_ide/bitstream/sys_wrapper.bit"
+12:09:37 INFO  : Context for 'APU' is selected.
+12:09:37 INFO  : Hardware design and registers information is loaded from 'I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/ARM/export/ARM/hw/sys_wrapper.xsa'.
+12:09:37 INFO  : 'configparams force-mem-access 1' command is executed.
+12:09:37 INFO  : Context for 'APU' is selected.
+12:09:37 INFO  : Sourcing of 'I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/lwip/_ide/psinit/ps7_init.tcl' is done.
+12:09:38 INFO  : 'ps7_init' command is executed.
+12:09:38 INFO  : 'ps7_post_config' command is executed.
+12:09:38 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+12:09:38 INFO  : Context for processor 'microblaze_0' is selected.
+12:09:38 INFO  : The application 'I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/freertos/Debug/freertos.elf' is downloaded to processor 'microblaze_0'.
+12:09:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:09:41 INFO  : The application 'I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/lwip/Debug/lwip.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:09:41 INFO  : 'configparams force-mem-access 0' command is executed.
+12:09:41 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Platform Cable USB II 13724327082d01" && level==0 && jtag_device_ctx=="jsn-DLC10-13724327082d01-13722093-0"}
+fpga -file I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/lwip/_ide/bitstream/sys_wrapper.bit -no-revision-check
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/ARM/export/ARM/hw/sys_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/lwip/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/freertos/Debug/freertos.elf
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/lwip/Debug/lwip.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:09:41 INFO  : Context for processor 'microblaze_0' is selected.
+12:09:41 INFO  : 'con' command is executed.
+12:09:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:09:41 INFO  : 'con' command is executed.
+12:09:41 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+12:09:41 INFO  : Launch script is exported to file 'I:\FPGA\OurEDA_P1K\micro_blaze_ps_v1\skd_Micro_a_A9_v3\freertos_system\_ide\scripts\debugger_lwip-default.tcl'
+12:11:32 INFO  : Disconnected from the channel tcfchan#6.
+12:11:33 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:11:33 INFO  : Jtag cable 'Platform Cable USB II 13724327082d01' is selected.
+12:11:33 INFO  : 'jtag frequency' command is executed.
+12:11:33 INFO  : Context for 'APU' is selected.
+12:11:33 INFO  : System reset is completed.
+12:11:36 INFO  : 'after 3000' command is executed.
+12:11:36 INFO  : 'targets -set -filter {jtag_cable_name =~ "Platform Cable USB II 13724327082d01" && level==0 && jtag_device_ctx=="jsn-DLC10-13724327082d01-13722093-0"}' command is executed.
+12:11:42 INFO  : Device configured successfully with "I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/lwip/_ide/bitstream/sys_wrapper.bit"
+12:11:42 INFO  : Context for 'APU' is selected.
+12:11:42 INFO  : Hardware design and registers information is loaded from 'I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/ARM/export/ARM/hw/sys_wrapper.xsa'.
+12:11:42 INFO  : 'configparams force-mem-access 1' command is executed.
+12:11:42 INFO  : Context for 'APU' is selected.
+12:11:42 INFO  : Sourcing of 'I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/lwip/_ide/psinit/ps7_init.tcl' is done.
+12:11:43 INFO  : 'ps7_init' command is executed.
+12:11:43 INFO  : 'ps7_post_config' command is executed.
+12:11:43 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+12:11:43 INFO  : Context for processor 'microblaze_0' is selected.
+12:11:44 INFO  : The application 'I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/freertos/Debug/freertos.elf' is downloaded to processor 'microblaze_0'.
+12:11:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:11:46 INFO  : The application 'I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/lwip/Debug/lwip.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:11:46 INFO  : 'configparams force-mem-access 0' command is executed.
+12:11:46 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Platform Cable USB II 13724327082d01" && level==0 && jtag_device_ctx=="jsn-DLC10-13724327082d01-13722093-0"}
+fpga -file I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/lwip/_ide/bitstream/sys_wrapper.bit -no-revision-check
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/ARM/export/ARM/hw/sys_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/lwip/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/freertos/Debug/freertos.elf
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/lwip/Debug/lwip.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:11:46 INFO  : Context for processor 'microblaze_0' is selected.
+12:11:46 INFO  : 'con' command is executed.
+12:11:46 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:11:46 INFO  : 'con' command is executed.
+12:11:46 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+12:11:46 INFO  : Launch script is exported to file 'I:\FPGA\OurEDA_P1K\micro_blaze_ps_v1\skd_Micro_a_A9_v3\freertos_system\_ide\scripts\debugger_lwip-default.tcl'
+12:12:28 INFO  : Disconnected from the channel tcfchan#7.
+12:12:29 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:12:29 INFO  : Jtag cable 'Platform Cable USB II 13724327082d01' is selected.
+12:12:29 INFO  : 'jtag frequency' command is executed.
+12:12:29 INFO  : Context for 'APU' is selected.
+12:12:29 INFO  : System reset is completed.
+12:12:32 INFO  : 'after 3000' command is executed.
+12:12:32 INFO  : 'targets -set -filter {jtag_cable_name =~ "Platform Cable USB II 13724327082d01" && level==0 && jtag_device_ctx=="jsn-DLC10-13724327082d01-13722093-0"}' command is executed.
+12:12:38 INFO  : Device configured successfully with "I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/lwip/_ide/bitstream/sys_wrapper.bit"
+12:12:38 INFO  : Context for 'APU' is selected.
+12:12:38 INFO  : Hardware design and registers information is loaded from 'I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/ARM/export/ARM/hw/sys_wrapper.xsa'.
+12:12:38 INFO  : 'configparams force-mem-access 1' command is executed.
+12:12:38 INFO  : Context for 'APU' is selected.
+12:12:38 INFO  : Sourcing of 'I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/lwip/_ide/psinit/ps7_init.tcl' is done.
+12:12:39 INFO  : 'ps7_init' command is executed.
+12:12:39 INFO  : 'ps7_post_config' command is executed.
+12:12:39 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+12:12:39 INFO  : Context for processor 'microblaze_0' is selected.
+12:12:40 INFO  : The application 'I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/freertos/Debug/freertos.elf' is downloaded to processor 'microblaze_0'.
+12:12:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:12:42 INFO  : The application 'I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/lwip/Debug/lwip.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:12:42 INFO  : 'configparams force-mem-access 0' command is executed.
+12:12:42 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Platform Cable USB II 13724327082d01" && level==0 && jtag_device_ctx=="jsn-DLC10-13724327082d01-13722093-0"}
+fpga -file I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/lwip/_ide/bitstream/sys_wrapper.bit -no-revision-check
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/ARM/export/ARM/hw/sys_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/lwip/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/freertos/Debug/freertos.elf
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/lwip/Debug/lwip.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:12:42 INFO  : Context for processor 'microblaze_0' is selected.
+12:12:42 INFO  : 'con' command is executed.
+12:12:42 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:12:42 INFO  : 'con' command is executed.
+12:12:42 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+12:12:42 INFO  : Launch script is exported to file 'I:\FPGA\OurEDA_P1K\micro_blaze_ps_v1\skd_Micro_a_A9_v3\freertos_system\_ide\scripts\debugger_lwip-default.tcl'
+12:20:36 INFO  : Hardware specification for platform project 'microblaze' is updated.
+12:20:51 INFO  : Hardware specification for platform project 'ARM' is updated.
+12:21:47 INFO  : Result from executing command 'getProjects': ARM;microblaze
+12:21:47 INFO  : Result from executing command 'getPlatforms': ARM|I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/ARM/export/ARM/ARM.xpfm;microblaze|I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/microblaze/export/microblaze/microblaze.xpfm;xilinx_zcu102_base_202210_1|D:/Xilinx/Vitis/2022.1/base_platforms/xilinx_zcu102_base_202210_1/xilinx_zcu102_base_202210_1.xpfm;xilinx_zcu102_base_dfx_202210_1|D:/Xilinx/Vitis/2022.1/base_platforms/xilinx_zcu102_base_dfx_202210_1/xilinx_zcu102_base_dfx_202210_1.xpfm;xilinx_zcu104_base_202210_1|D:/Xilinx/Vitis/2022.1/base_platforms/xilinx_zcu104_base_202210_1/xilinx_zcu104_base_202210_1.xpfm
+12:21:47 INFO  : Checking for BSP changes to sync application flags for project 'FSBL'...
+12:21:56 INFO  : The hardware specification used by project 'FSBL' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+12:21:56 INFO  : The file 'I:\FPGA\OurEDA_P1K\micro_blaze_ps_v1\skd_Micro_a_A9_v3\FSBL\_ide\bitstream\sys_wrapper.bit' stored in project is removed.
+12:21:56 INFO  : The file 'I:\FPGA\OurEDA_P1K\micro_blaze_ps_v1\skd_Micro_a_A9_v3\FSBL\_ide\bitstream\sys_wrapper.mmi' stored in project is removed.
+12:21:56 INFO  : The updated bitstream files are copied from platform to folder 'I:\FPGA\OurEDA_P1K\micro_blaze_ps_v1\skd_Micro_a_A9_v3\FSBL\_ide\bitstream' in project 'FSBL'.
+12:21:56 INFO  : The file 'I:\FPGA\OurEDA_P1K\micro_blaze_ps_v1\skd_Micro_a_A9_v3\FSBL\_ide\psinit\ps7_init.tcl' stored in project is removed.
+12:22:03 INFO  : The updated ps init files are copied from platform to folder 'I:\FPGA\OurEDA_P1K\micro_blaze_ps_v1\skd_Micro_a_A9_v3\FSBL\_ide\psinit' in project 'FSBL'.
+12:22:11 INFO  : Checking for BSP changes to sync application flags for project 'lwip'...
+12:22:14 INFO  : The hardware specification used by project 'lwip' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+12:22:14 INFO  : The file 'I:\FPGA\OurEDA_P1K\micro_blaze_ps_v1\skd_Micro_a_A9_v3\lwip\_ide\bitstream\sys_wrapper.bit' stored in project is removed.
+12:22:14 INFO  : The file 'I:\FPGA\OurEDA_P1K\micro_blaze_ps_v1\skd_Micro_a_A9_v3\lwip\_ide\bitstream\sys_wrapper.mmi' stored in project is removed.
+12:22:14 INFO  : The updated bitstream files are copied from platform to folder 'I:\FPGA\OurEDA_P1K\micro_blaze_ps_v1\skd_Micro_a_A9_v3\lwip\_ide\bitstream' in project 'lwip'.
+12:22:14 INFO  : The file 'I:\FPGA\OurEDA_P1K\micro_blaze_ps_v1\skd_Micro_a_A9_v3\lwip\_ide\psinit\ps7_init.tcl' stored in project is removed.
+12:22:21 INFO  : The updated ps init files are copied from platform to folder 'I:\FPGA\OurEDA_P1K\micro_blaze_ps_v1\skd_Micro_a_A9_v3\lwip\_ide\psinit' in project 'lwip'.
+12:22:42 INFO  : Result from executing command 'getProjects': ARM;microblaze
+12:22:42 INFO  : Result from executing command 'getPlatforms': microblaze|I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/microblaze/export/microblaze/microblaze.xpfm;xilinx_zcu102_base_202210_1|D:/Xilinx/Vitis/2022.1/base_platforms/xilinx_zcu102_base_202210_1/xilinx_zcu102_base_202210_1.xpfm;xilinx_zcu102_base_dfx_202210_1|D:/Xilinx/Vitis/2022.1/base_platforms/xilinx_zcu102_base_dfx_202210_1/xilinx_zcu102_base_dfx_202210_1.xpfm;xilinx_zcu104_base_202210_1|D:/Xilinx/Vitis/2022.1/base_platforms/xilinx_zcu104_base_202210_1/xilinx_zcu104_base_202210_1.xpfm
+12:22:43 INFO  : Checking for BSP changes to sync application flags for project 'freertos'...
+12:22:49 INFO  : The hardware specification used by project 'freertos' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+12:22:49 INFO  : The file 'I:\FPGA\OurEDA_P1K\micro_blaze_ps_v1\skd_Micro_a_A9_v3\freertos\_ide\bitstream\sys_wrapper.bit' stored in project is removed.
+12:22:49 INFO  : The file 'I:\FPGA\OurEDA_P1K\micro_blaze_ps_v1\skd_Micro_a_A9_v3\freertos\_ide\bitstream\sys_wrapper.mmi' stored in project is removed.
+12:22:49 INFO  : The updated bitstream files are copied from platform to folder 'I:\FPGA\OurEDA_P1K\micro_blaze_ps_v1\skd_Micro_a_A9_v3\freertos\_ide\bitstream' in project 'freertos'.
+12:22:49 INFO  : The file 'I:\FPGA\OurEDA_P1K\micro_blaze_ps_v1\skd_Micro_a_A9_v3\freertos\_ide\psinit\ps7_init.tcl' stored in project is removed.
+12:22:55 INFO  : The updated ps init files are copied from platform to folder 'I:\FPGA\OurEDA_P1K\micro_blaze_ps_v1\skd_Micro_a_A9_v3\freertos\_ide\psinit' in project 'freertos'.
+12:23:40 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:23:40 INFO  : Jtag cable 'Platform Cable USB II 13724327082d01' is selected.
+12:23:40 INFO  : 'jtag frequency' command is executed.
+12:23:40 INFO  : Context for 'APU' is selected.
+12:23:40 INFO  : System reset is completed.
+12:23:43 INFO  : 'after 3000' command is executed.
+12:23:43 INFO  : 'targets -set -filter {jtag_cable_name =~ "Platform Cable USB II 13724327082d01" && level==0 && jtag_device_ctx=="jsn-DLC10-13724327082d01-13722093-0"}' command is executed.
+12:23:49 INFO  : Device configured successfully with "I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/freertos/_ide/bitstream/sys_wrapper.bit"
+12:23:49 INFO  : Context for 'APU' is selected.
+12:23:49 INFO  : Hardware design and registers information is loaded from 'I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/microblaze/export/microblaze/hw/sys_wrapper.xsa'.
+12:23:49 INFO  : 'configparams force-mem-access 1' command is executed.
+12:23:49 INFO  : Context for 'APU' is selected.
+12:23:49 INFO  : Sourcing of 'I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/freertos/_ide/psinit/ps7_init.tcl' is done.
+12:23:50 INFO  : 'ps7_init' command is executed.
+12:23:50 INFO  : 'ps7_post_config' command is executed.
+12:23:50 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+12:23:50 INFO  : Context for processor 'microblaze_0' is selected.
+12:23:51 INFO  : The application 'I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/freertos/Debug/freertos.elf' is downloaded to processor 'microblaze_0'.
+12:23:51 INFO  : 'configparams force-mem-access 0' command is executed.
+12:23:51 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Platform Cable USB II 13724327082d01" && level==0 && jtag_device_ctx=="jsn-DLC10-13724327082d01-13722093-0"}
+fpga -file I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/freertos/_ide/bitstream/sys_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/microblaze/export/microblaze/hw/sys_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/freertos/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/freertos/Debug/freertos.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:23:51 INFO  : Context for processor 'microblaze_0' is selected.
+12:23:51 INFO  : 'con' command is executed.
+12:23:51 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+12:23:51 INFO  : Launch script is exported to file 'I:\FPGA\OurEDA_P1K\micro_blaze_ps_v1\skd_Micro_a_A9_v3\lwip_system\_ide\scripts\systemdebugger_lwip_system_standalone.tcl'
+12:23:51 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:23:51 INFO  : Jtag cable 'Platform Cable USB II 13724327082d01' is selected.
+12:23:51 INFO  : 'jtag frequency' command is executed.
+12:23:51 INFO  : Context for 'APU' is selected.
+12:23:51 INFO  : System reset is completed.
+12:23:54 INFO  : 'after 3000' command is executed.
+12:23:58 INFO  : 'targets -set -filter {jtag_cable_name =~ "Platform Cable USB II 13724327082d01" && level==0 && jtag_device_ctx=="jsn-DLC10-13724327082d01-13722093-0"}' command is executed.
+12:24:04 INFO  : Device configured successfully with "I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/lwip/_ide/bitstream/sys_wrapper.bit"
+12:24:04 INFO  : Context for 'APU' is selected.
+12:24:04 INFO  : Hardware design and registers information is loaded from 'I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/ARM/export/ARM/hw/sys_wrapper.xsa'.
+12:24:04 INFO  : 'configparams force-mem-access 1' command is executed.
+12:24:04 INFO  : Context for 'APU' is selected.
+12:24:04 INFO  : Sourcing of 'I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/lwip/_ide/psinit/ps7_init.tcl' is done.
+12:24:04 INFO  : 'ps7_init' command is executed.
+12:24:05 INFO  : 'ps7_post_config' command is executed.
+12:24:05 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+12:24:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:24:07 INFO  : The application 'I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/lwip/Debug/lwip.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:24:07 INFO  : 'configparams force-mem-access 0' command is executed.
+12:24:07 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Platform Cable USB II 13724327082d01" && level==0 && jtag_device_ctx=="jsn-DLC10-13724327082d01-13722093-0"}
+fpga -file I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/lwip/_ide/bitstream/sys_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/ARM/export/ARM/hw/sys_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/lwip/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/lwip/Debug/lwip.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:24:07 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:24:07 INFO  : 'con' command is executed.
+12:24:07 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+12:24:07 INFO  : Launch script is exported to file 'I:\FPGA\OurEDA_P1K\micro_blaze_ps_v1\skd_Micro_a_A9_v3\lwip_system\_ide\scripts\systemdebugger_lwip_system_standalone.tcl'
+12:24:13 INFO  : Disconnected from the channel tcfchan#8.
+12:24:14 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:24:14 INFO  : Jtag cable 'Platform Cable USB II 13724327082d01' is selected.
+12:24:14 INFO  : 'jtag frequency' command is executed.
+12:24:14 INFO  : Context for 'APU' is selected.
+12:24:14 INFO  : System reset is completed.
+12:24:17 INFO  : 'after 3000' command is executed.
+12:24:17 INFO  : 'targets -set -filter {jtag_cable_name =~ "Platform Cable USB II 13724327082d01" && level==0 && jtag_device_ctx=="jsn-DLC10-13724327082d01-13722093-0"}' command is executed.
+12:24:23 INFO  : Device configured successfully with "I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/lwip/_ide/bitstream/sys_wrapper.bit"
+12:24:23 INFO  : Context for 'APU' is selected.
+12:24:23 INFO  : Hardware design and registers information is loaded from 'I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/ARM/export/ARM/hw/sys_wrapper.xsa'.
+12:24:23 INFO  : 'configparams force-mem-access 1' command is executed.
+12:24:23 INFO  : Context for 'APU' is selected.
+12:24:23 INFO  : Sourcing of 'I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/lwip/_ide/psinit/ps7_init.tcl' is done.
+12:24:24 INFO  : 'ps7_init' command is executed.
+12:24:24 INFO  : 'ps7_post_config' command is executed.
+12:24:24 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+12:24:24 INFO  : Context for processor 'microblaze_0' is selected.
+12:24:24 INFO  : The application 'I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/freertos/Debug/freertos.elf' is downloaded to processor 'microblaze_0'.
+12:24:24 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:24:27 INFO  : The application 'I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/lwip/Debug/lwip.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:24:27 INFO  : 'configparams force-mem-access 0' command is executed.
+12:24:27 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Platform Cable USB II 13724327082d01" && level==0 && jtag_device_ctx=="jsn-DLC10-13724327082d01-13722093-0"}
+fpga -file I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/lwip/_ide/bitstream/sys_wrapper.bit -no-revision-check
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/ARM/export/ARM/hw/sys_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/lwip/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/freertos/Debug/freertos.elf
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/lwip/Debug/lwip.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:24:27 INFO  : Context for processor 'microblaze_0' is selected.
+12:24:27 INFO  : 'con' command is executed.
+12:24:27 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:24:27 INFO  : 'con' command is executed.
+12:24:27 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+12:24:27 INFO  : Launch script is exported to file 'I:\FPGA\OurEDA_P1K\micro_blaze_ps_v1\skd_Micro_a_A9_v3\freertos_system\_ide\scripts\debugger_lwip-default.tcl'
+12:31:42 INFO  : Bit file 'I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/FSBL/_ide/bitstream/download.bit' is generated.
+12:32:31 INFO  : Invoking Bootgen: bootgen -image output.bif -arch zynq -o I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/FSBL/bootimg/BOOT.bin
+12:32:31 INFO  : Creating new bif file I:\FPGA\OurEDA_P1K\micro_blaze_ps_v1\skd_Micro_a_A9_v3\FSBL\bootimg\output.bif
+12:32:33 INFO  : Bootgen command execution is done.
+16:40:39 WARN  : channel "tcfchan#8" closed
+16:40:39 WARN  : channel "tcfchan#8" closed
+16:40:39 INFO  : Disconnected from the channel tcfchan#13.

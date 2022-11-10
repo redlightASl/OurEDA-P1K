@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="scw_hwspec" value="I:\FPGA\OurEDA_P1K\micro_blaze_ps_v1"/>
+	<item key="fpga_elf_mem_selection" value="I:\FPGA\OurEDA_P1K\micro_blaze_ps_v1\skd_Micro_a_A9_v3\freertos\Debug"/>
+	<item key="bootgen_files_selection" value="I:\FPGA\OurEDA_P1K\micro_blaze_ps_v1\skd_Micro_a_A9_v3\lwip\Debug"/>
+</section>

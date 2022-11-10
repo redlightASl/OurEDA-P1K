@@ -1,0 +1,19 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Tue Oct  4 16:59:16 2022
+# Process ID: 3768
+# Current directory: F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/OurEDA-P1K_zynq/OurEDA-P1K_zynq.tmp/axi2gpio_v1_0_project
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent9356 F:\Git_repository\OurEDA\OurEDA-P1K\Fpga\OurEDA-P1K_zynq\OurEDA-P1K_zynq.tmp\axi2gpio_v1_0_project\axi2gpio_v1_0_project.xpr
+# Log file: F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/OurEDA-P1K_zynq/OurEDA-P1K_zynq.tmp/axi2gpio_v1_0_project/vivado.log
+# Journal file: F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/OurEDA-P1K_zynq/OurEDA-P1K_zynq.tmp/axi2gpio_v1_0_project\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/OurEDA-P1K_zynq/OurEDA-P1K_zynq.tmp/axi2gpio_v1_0_project/axi2gpio_v1_0_project.xpr
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 12
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 12
+wait_on_run synth_1

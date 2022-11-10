@@ -1,0 +1,66 @@
+12:22:45 **** Incremental Build of configuration Debug for project freertos ****
+make all 
+'Building file: ../src/Algorithm.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/Algorithm.o" -II:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/microblaze/export/microblaze/sw/microblaze/freertos10_xilinx_microblaze_0/bspinclude/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/Algorithm.d" -MT"src/Algorithm.o" -o "src/Algorithm.o" "../src/Algorithm.c"
+../src/Algorithm.c:440:16: warning: 'IdTest' defined but not used [-Wunused-function]
+  440 | static uint8_t IdTest(uint8_t *String, uint8_t Method, uint8_t StringLength,
+      |                ^~~~~~
+../src/Algorithm.c:91:16: warning: 'ParityCalculate' defined but not used [-Wunused-function]
+   91 | static uint8_t ParityCalculate(uint8_t *CacString, uint8_t CacStringSize)
+      |                ^~~~~~~~~~~~~~~
+../src/Algorithm.c:61:16: warning: 'Crc8Caculate' defined but not used [-Wunused-function]
+   61 | static uint8_t Crc8Caculate(uint8_t *CacString, uint8_t CacStringSize)
+      |                ^~~~~~~~~~~~
+../src/Algorithm.c:26:16: warning: 'XorCaculate' defined but not used [-Wunused-function]
+   26 | static uint8_t XorCaculate(uint8_t *CacString, uint8_t CacStringSize)
+      |                ^~~~~~~~~~~
+'Finished building: ../src/Algorithm.c'
+' '
+'Building file: ../src/BasicCtrl.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/BasicCtrl.o" -II:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/microblaze/export/microblaze/sw/microblaze/freertos10_xilinx_microblaze_0/bspinclude/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/BasicCtrl.d" -MT"src/BasicCtrl.o" -o "src/BasicCtrl.o" "../src/BasicCtrl.c"
+../src/BasicCtrl.c: In function 'MoveControl':
+../src/BasicCtrl.c:92:7: warning: extra tokens at end of #else directive [-Wendif-labels]
+   92 | #else if (NUMBER_OF_VERTICAL_THRUSTER == 4) && (NUMBER_OF_HORIZENTAL_THRUSTER == 4)
+      |       ^~
+'Finished building: ../src/BasicCtrl.c'
+' '
+'Building file: ../src/Display.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/Display.o" -II:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/microblaze/export/microblaze/sw/microblaze/freertos10_xilinx_microblaze_0/bspinclude/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/Display.d" -MT"src/Display.o" -o "src/Display.o" "../src/Display.c"
+'Finished building: ../src/Display.c'
+' '
+'Building file: ../src/Sensor.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/Sensor.o" -II:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/microblaze/export/microblaze/sw/microblaze/freertos10_xilinx_microblaze_0/bspinclude/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/Sensor.d" -MT"src/Sensor.o" -o "src/Sensor.o" "../src/Sensor.c"
+'Finished building: ../src/Sensor.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -II:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/microblaze/export/microblaze/sw/microblaze/freertos10_xilinx_microblaze_0/bspinclude/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'sensorTask':
+../src/main.c:298:41: warning: passing argument 2 of 'report_analysis' from incompatible pointer type [-Wincompatible-pointer-types]
+  298 |                 report_analysis(&report,report_data);
+      |                                         ^~~~~~~~~~~
+      |                                         |
+      |                                         u16 * {aka short unsigned int *}
+../src/main.c:39:62: note: expected 'uint32_t *' {aka 'long unsigned int *'} but argument is of type 'u16 *' {aka 'short unsigned int *'}
+   39 | static void report_analysis(ReportData_t* SendData,uint32_t *ReportData);
+      |                                                    ~~~~~~~~~~^~~~~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: freertos.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -LI:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/microblaze/export/microblaze/sw/microblaze/freertos10_xilinx_microblaze_0/bsplib/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "freertos.elf"  ./src/Algorithm.o ./src/BasicCtrl.o ./src/Display.o ./src/Sensor.o ./src/main.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: freertos.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size freertos.elf  |tee "freertos.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  39316	    444	  69912	 109672	  1ac68	freertos.elf
+'Finished building: freertos.elf.size'
+' '
+
+12:22:48 Build Finished (took 3s.37ms)
+

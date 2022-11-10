@@ -1,0 +1,338 @@
+
+*** Running vivado
+    with args -log axi2gpio_v1_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source axi2gpio_v1_0.tcl
+
+
+
+****** Vivado v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source axi2gpio_v1_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'f:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2pid_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'f:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'f:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2dvp_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'f:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2iic_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'f:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2uart_1.0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/xilinx/Vivado/2020.2/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is f:/Git_repository/OurEDA/OurEDA-P1K/Fpga/OurEDA-P1K_zynq/OurEDA-P1K_zynq.tmp/axi2gpio_v1_0_project/axi2gpio_v1_0_project.cache/ip 
+Command: synth_design -top axi2gpio_v1_0 -part xc7z010clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 11752
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1143.359 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'axi2gpio_v1_0' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/hdl/axi2gpio_v1_0.v:4]
+	Parameter GPIO_PORT_NUM bound to: 32 - type: integer 
+	Parameter CNT_LENGTH bound to: 16 - type: integer 
+	Parameter TIM_NUM bound to: 8 - type: integer 
+	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S00_AXI_ADDR_WIDTH bound to: 6 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axi2gpio_v1_0_S00_AXI' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/hdl/axi2gpio_v1_0_S00_AXI.v:4]
+	Parameter GPIO_PORT_NUM bound to: 32 - type: integer 
+	Parameter CNT_LENGTH bound to: 16 - type: integer 
+	Parameter TIM_NUM bound to: 8 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 6 - type: integer 
+	Parameter ADDR_LSB bound to: 2 - type: integer 
+	Parameter OPT_MEM_ADDR_BITS bound to: 3 - type: integer 
+INFO: [Synth 8-226] default block is never used [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/hdl/axi2gpio_v1_0_S00_AXI.v:466]
+INFO: [Synth 8-6157] synthesizing module 'gpio_top' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio_top.v:4]
+	Parameter GPIO_PORT_NUM bound to: 32 - type: integer 
+	Parameter CNT_LENGTH bound to: 16 - type: integer 
+	Parameter TIM_NUM bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'pwm' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/pwm.v:4]
+	Parameter CNT_LENGTH bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'pwm' (1#1) [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/pwm.v:4]
+INFO: [Synth 8-6157] synthesizing module 'gpio' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:4]
+	Parameter GPIO_PORT_NUM bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'gpio' (2#1) [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'gpio_top' (3#1) [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio_top.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'axi2gpio_v1_0_S00_AXI' (4#1) [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/hdl/axi2gpio_v1_0_S00_AXI.v:4]
+WARNING: [Synth 8-7071] port 'pwm_en' of module 'axi2gpio_v1_0_S00_AXI' is unconnected for instance 'axi2gpio_v1_0_S00_AXI_inst' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/hdl/axi2gpio_v1_0.v:61]
+WARNING: [Synth 8-7023] instance 'axi2gpio_v1_0_S00_AXI_inst' of module 'axi2gpio_v1_0_S00_AXI' has 27 connections declared, but only 26 given [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/hdl/axi2gpio_v1_0.v:61]
+INFO: [Synth 8-6157] synthesizing module 'IOBUF' [D:/xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:36242]
+	Parameter DRIVE bound to: 12 - type: integer 
+	Parameter IBUF_LOW_PWR bound to: TRUE - type: string 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'IOBUF' (5#1) [D:/xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:36242]
+WARNING: [Synth 8-689] width (32) of port connection 'O' does not match port width (1) of module 'IOBUF' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/hdl/axi2gpio_v1_0.v:93]
+WARNING: [Synth 8-689] width (32) of port connection 'I' does not match port width (1) of module 'IOBUF' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/hdl/axi2gpio_v1_0.v:94]
+WARNING: [Synth 8-689] width (32) of port connection 'IO' does not match port width (1) of module 'IOBUF' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/hdl/axi2gpio_v1_0.v:95]
+WARNING: [Synth 8-689] width (32) of port connection 'T' does not match port width (1) of module 'IOBUF' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/hdl/axi2gpio_v1_0.v:96]
+INFO: [Synth 8-6155] done synthesizing module 'axi2gpio_v1_0' (6#1) [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/hdl/axi2gpio_v1_0.v:4]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1143.359 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1143.359 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1143.359 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1143.359 ; gain = 0.000
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   16 Bit       Adders := 8     
++---Registers : 
+	               32 Bit    Registers := 16    
+	               16 Bit    Registers := 8     
+	                6 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 68    
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 15    
+	  16 Input   32 Bit        Muxes := 15    
+	   2 Input   16 Bit        Muxes := 16    
+	   2 Input    1 Bit        Muxes := 191   
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[30] with 1st driver pin 'axi2gpio_v1_0_S00_AXI_inst/u_gpio_top/gpio_inst/p_58_out_inferred/p_58_out[30]' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[30] with 2nd driver pin 'GND' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net io_pin_out[30] is connected to at least one constant driver which has been preserved, other driver is ignored [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[29] with 1st driver pin 'axi2gpio_v1_0_S00_AXI_inst/u_gpio_top/gpio_inst/p_58_out_inferred/p_58_out[29]' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[29] with 2nd driver pin 'GND' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net io_pin_out[29] is connected to at least one constant driver which has been preserved, other driver is ignored [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[28] with 1st driver pin 'axi2gpio_v1_0_S00_AXI_inst/u_gpio_top/gpio_inst/p_58_out_inferred/p_58_out[28]' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[28] with 2nd driver pin 'GND' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net io_pin_out[28] is connected to at least one constant driver which has been preserved, other driver is ignored [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[27] with 1st driver pin 'axi2gpio_v1_0_S00_AXI_inst/u_gpio_top/gpio_inst/p_58_out_inferred/p_58_out[27]' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[27] with 2nd driver pin 'GND' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net io_pin_out[27] is connected to at least one constant driver which has been preserved, other driver is ignored [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[26] with 1st driver pin 'axi2gpio_v1_0_S00_AXI_inst/u_gpio_top/gpio_inst/p_58_out_inferred/p_58_out[26]' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[26] with 2nd driver pin 'GND' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net io_pin_out[26] is connected to at least one constant driver which has been preserved, other driver is ignored [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[25] with 1st driver pin 'axi2gpio_v1_0_S00_AXI_inst/u_gpio_top/gpio_inst/p_58_out_inferred/p_58_out[25]' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[25] with 2nd driver pin 'GND' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net io_pin_out[25] is connected to at least one constant driver which has been preserved, other driver is ignored [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[24] with 1st driver pin 'axi2gpio_v1_0_S00_AXI_inst/u_gpio_top/gpio_inst/p_58_out_inferred/p_58_out[24]' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[24] with 2nd driver pin 'GND' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net io_pin_out[24] is connected to at least one constant driver which has been preserved, other driver is ignored [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[23] with 1st driver pin 'axi2gpio_v1_0_S00_AXI_inst/u_gpio_top/gpio_inst/p_58_out_inferred/p_58_out[23]' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[23] with 2nd driver pin 'GND' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net io_pin_out[23] is connected to at least one constant driver which has been preserved, other driver is ignored [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[22] with 1st driver pin 'axi2gpio_v1_0_S00_AXI_inst/u_gpio_top/gpio_inst/p_58_out_inferred/p_58_out[22]' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[22] with 2nd driver pin 'GND' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net io_pin_out[22] is connected to at least one constant driver which has been preserved, other driver is ignored [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[21] with 1st driver pin 'axi2gpio_v1_0_S00_AXI_inst/u_gpio_top/gpio_inst/p_58_out_inferred/p_58_out[21]' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[21] with 2nd driver pin 'GND' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net io_pin_out[21] is connected to at least one constant driver which has been preserved, other driver is ignored [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[20] with 1st driver pin 'axi2gpio_v1_0_S00_AXI_inst/u_gpio_top/gpio_inst/p_58_out_inferred/p_58_out[20]' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[20] with 2nd driver pin 'GND' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net io_pin_out[20] is connected to at least one constant driver which has been preserved, other driver is ignored [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[19] with 1st driver pin 'axi2gpio_v1_0_S00_AXI_inst/u_gpio_top/gpio_inst/p_58_out_inferred/p_58_out[19]' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[19] with 2nd driver pin 'GND' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net io_pin_out[19] is connected to at least one constant driver which has been preserved, other driver is ignored [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[18] with 1st driver pin 'axi2gpio_v1_0_S00_AXI_inst/u_gpio_top/gpio_inst/p_58_out_inferred/p_58_out[18]' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[18] with 2nd driver pin 'GND' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net io_pin_out[18] is connected to at least one constant driver which has been preserved, other driver is ignored [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[17] with 1st driver pin 'axi2gpio_v1_0_S00_AXI_inst/u_gpio_top/gpio_inst/p_58_out_inferred/p_58_out[17]' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[17] with 2nd driver pin 'GND' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net io_pin_out[17] is connected to at least one constant driver which has been preserved, other driver is ignored [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[16] with 1st driver pin 'axi2gpio_v1_0_S00_AXI_inst/u_gpio_top/gpio_inst/p_58_out_inferred/p_58_out[16]' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[16] with 2nd driver pin 'GND' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net io_pin_out[16] is connected to at least one constant driver which has been preserved, other driver is ignored [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[15] with 1st driver pin 'axi2gpio_v1_0_S00_AXI_inst/u_gpio_top/gpio_inst/p_58_out_inferred/p_58_out[15]' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[15] with 2nd driver pin 'GND' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net io_pin_out[15] is connected to at least one constant driver which has been preserved, other driver is ignored [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[14] with 1st driver pin 'axi2gpio_v1_0_S00_AXI_inst/u_gpio_top/gpio_inst/p_58_out_inferred/p_58_out[14]' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[14] with 2nd driver pin 'GND' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net io_pin_out[14] is connected to at least one constant driver which has been preserved, other driver is ignored [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[13] with 1st driver pin 'axi2gpio_v1_0_S00_AXI_inst/u_gpio_top/gpio_inst/p_58_out_inferred/p_58_out[13]' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[13] with 2nd driver pin 'GND' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net io_pin_out[13] is connected to at least one constant driver which has been preserved, other driver is ignored [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[12] with 1st driver pin 'axi2gpio_v1_0_S00_AXI_inst/u_gpio_top/gpio_inst/p_58_out_inferred/p_58_out[12]' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[12] with 2nd driver pin 'GND' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net io_pin_out[12] is connected to at least one constant driver which has been preserved, other driver is ignored [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[11] with 1st driver pin 'axi2gpio_v1_0_S00_AXI_inst/u_gpio_top/gpio_inst/p_58_out_inferred/p_58_out[11]' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[11] with 2nd driver pin 'GND' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net io_pin_out[11] is connected to at least one constant driver which has been preserved, other driver is ignored [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[10] with 1st driver pin 'axi2gpio_v1_0_S00_AXI_inst/u_gpio_top/gpio_inst/p_58_out_inferred/p_58_out[10]' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[10] with 2nd driver pin 'GND' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net io_pin_out[10] is connected to at least one constant driver which has been preserved, other driver is ignored [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[9] with 1st driver pin 'axi2gpio_v1_0_S00_AXI_inst/u_gpio_top/gpio_inst/p_58_out_inferred/p_58_out[9]' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[9] with 2nd driver pin 'GND' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net io_pin_out[9] is connected to at least one constant driver which has been preserved, other driver is ignored [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[8] with 1st driver pin 'axi2gpio_v1_0_S00_AXI_inst/u_gpio_top/gpio_inst/p_58_out_inferred/p_58_out[8]' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[8] with 2nd driver pin 'GND' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net io_pin_out[8] is connected to at least one constant driver which has been preserved, other driver is ignored [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[7] with 1st driver pin 'axi2gpio_v1_0_S00_AXI_inst/u_gpio_top/gpio_inst/p_58_out_inferred/p_58_out[7]' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[7] with 2nd driver pin 'GND' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net io_pin_out[7] is connected to at least one constant driver which has been preserved, other driver is ignored [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[6] with 1st driver pin 'axi2gpio_v1_0_S00_AXI_inst/u_gpio_top/gpio_inst/p_58_out_inferred/p_58_out[6]' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[6] with 2nd driver pin 'GND' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net io_pin_out[6] is connected to at least one constant driver which has been preserved, other driver is ignored [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[5] with 1st driver pin 'axi2gpio_v1_0_S00_AXI_inst/u_gpio_top/gpio_inst/p_58_out_inferred/p_58_out[5]' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[5] with 2nd driver pin 'GND' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net io_pin_out[5] is connected to at least one constant driver which has been preserved, other driver is ignored [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[4] with 1st driver pin 'axi2gpio_v1_0_S00_AXI_inst/u_gpio_top/gpio_inst/p_58_out_inferred/p_58_out[4]' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[4] with 2nd driver pin 'GND' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net io_pin_out[4] is connected to at least one constant driver which has been preserved, other driver is ignored [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[3] with 1st driver pin 'axi2gpio_v1_0_S00_AXI_inst/u_gpio_top/gpio_inst/p_58_out_inferred/p_58_out[3]' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[3] with 2nd driver pin 'GND' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net io_pin_out[3] is connected to at least one constant driver which has been preserved, other driver is ignored [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[2] with 1st driver pin 'axi2gpio_v1_0_S00_AXI_inst/u_gpio_top/gpio_inst/p_58_out_inferred/p_58_out[2]' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[2] with 2nd driver pin 'GND' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net io_pin_out[2] is connected to at least one constant driver which has been preserved, other driver is ignored [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[1] with 1st driver pin 'axi2gpio_v1_0_S00_AXI_inst/u_gpio_top/gpio_inst/p_58_out_inferred/p_58_out[1]' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin io_pin_out[1] with 2nd driver pin 'GND' [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net io_pin_out[1] is connected to at least one constant driver which has been preserved, other driver is ignored [F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0/src/gpio.v:29]
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1143.359 ; gain = 0.000
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1143.359 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1143.359 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1143.359 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1143.359 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1143.359 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1143.359 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1143.359 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1143.359 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+------+------+
+|      |Cell  |Count |
++------+------+------+
+|1     |BUFG  |     1|
+|2     |LUT1  |     1|
+|3     |LUT2  |     1|
+|4     |LUT3  |     1|
+|5     |LUT4  |     4|
+|6     |LUT5  |    32|
+|7     |LUT6  |   158|
+|8     |MUXF7 |    64|
+|9     |MUXF8 |    32|
+|10    |FDRE  |   525|
+|11    |FDSE  |     1|
+|12    |IBUF  |    51|
+|13    |IOBUF |     1|
+|14    |OBUF  |    72|
++------+------+------+
+
+Report Instance Areas: 
++------+-----------------------------+----------------------+------+
+|      |Instance                     |Module                |Cells |
++------+-----------------------------+----------------------+------+
+|1     |top                          |                      |   944|
+|2     |  axi2gpio_v1_0_S00_AXI_inst |axi2gpio_v1_0_S00_AXI |   819|
++------+-----------------------------+----------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1143.359 ; gain = 0.000
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 90 critical warnings and 6 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1143.359 ; gain = 0.000
+Synthesis Optimization Complete : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1143.359 ; gain = 0.000
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 1143.359 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 97 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1226.391 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 1 instance 
+
+INFO: [Common 17-83] Releasing license: Synthesis
+32 Infos, 7 Warnings, 90 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 1226.391 ; gain = 83.031
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+INFO: [Common 17-1381] The checkpoint 'F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/OurEDA-P1K_zynq/OurEDA-P1K_zynq.tmp/axi2gpio_v1_0_project/axi2gpio_v1_0_project.runs/synth_1/axi2gpio_v1_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file axi2gpio_v1_0_utilization_synth.rpt -pb axi2gpio_v1_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Oct  4 17:03:40 2022...

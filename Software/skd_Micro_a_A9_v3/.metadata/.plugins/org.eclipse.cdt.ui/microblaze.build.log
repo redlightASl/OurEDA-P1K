@@ -1,0 +1,211 @@
+12:22:29 **** Incremental Build of project microblaze ****
+buildplatform.bat 55645 microblaze no_domain_build 
+XSDB Server Channel: tcfchan#12
+hw_proc_handle is microblaze_0
+slave_ifs S01_AXI bus_name microblaze_0_M_AXI_DP
+D:/Xilinx/Vitis/2022.1/gnu/microblaze/nt
+In start copy microblaze
+INFO:[hsi-utils-101] "xprint_generated_header" tcl procedure is deprecated, use "hsi::utils::write_c_header " instead
+INFO:[hsi-utils-101] "xget_interrupt_sources" tcl procedure is deprecated, use "hsi::utils::get_interrupt_sources microblaze_0" instead
+INFO:[hsi-utils-101] "xget_name" tcl procedure is deprecated, use "hsi::utils::get_ip_param_name axi_intc_0 DEVICE_ID" instead
+INFO:[hsi-utils-101] "xprint_generated_header" tcl procedure is deprecated, use "hsi::utils::write_c_header " instead
+INFO:[hsi-utils-101] "xprint_generated_header" tcl procedure is deprecated, use "hsi::utils::write_c_header " instead
+INFO:[hsi-utils-101] "get_ip_version" tcl procedure is deprecated, use "hsi::utils::get_ip_version microblaze_0" instead
+Building the BSP Library for domain  - freertos10_xilinx_microblaze_0 on processor microblaze_0
+make --no-print-directory seq_libs
+
+'Finished building libraries sequentially.'
+
+make -j 6 --no-print-directory par_libs
+
+"Running Make include in microblaze_0/libsrc/axi2gpio_v1_0/src"
+
+make -C microblaze_0/libsrc/axi2gpio_v1_0/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COM
+PILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -W
+all -Wextra -fno-tree-loop-distribute-patterns"
+
+"Running Make include in microblaze_0/libsrc/axi_wt931_decoder_v1_0/src"
+
+make -C microblaze_0/libsrc/axi_wt931_decoder_v1_0/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb
+-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-se
+ctions -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+"Running Make include in microblaze_0/libsrc/bram_v4_7/src"
+
+make -C microblaze_0/libsrc/bram_v4_7/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILE
+R_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall 
+-Wextra -fno-tree-loop-distribute-patterns"
+
+"Running Make include in microblaze_0/libsrc/cpu_v2_15/src"
+
+make -C microblaze_0/libsrc/cpu_v2_15/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILE
+R_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall 
+-Wextra -fno-tree-loop-distribute-patterns"
+
+"Running Make include in microblaze_0/libsrc/freertos10_xilinx_v1_11/src"
+
+make -C microblaze_0/libsrc/freertos10_xilinx_v1_11/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=m
+b-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-s
+ections -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+"Running Make include in microblaze_0/libsrc/gpio_v4_9/src"
+
+make -C microblaze_0/libsrc/gpio_v4_9/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILE
+R_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall 
+-Wextra -fno-tree-loop-distribute-patterns"
+
+"Running Make include in microblaze_0/libsrc/intc_v3_14/src"
+
+make -C microblaze_0/libsrc/intc_v3_14/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPIL
+ER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall
+ -Wextra -fno-tree-loop-distribute-patterns"
+
+"Running Make include in microblaze_0/libsrc/led_v1_0/src"
+
+make -C microblaze_0/libsrc/led_v1_0/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER
+_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall -
+Wextra -fno-tree-loop-distribute-patterns"
+
+"Running Make include in microblaze_0/libsrc/tmrctr_v4_9/src"
+
+make -C microblaze_0/libsrc/tmrctr_v4_9/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPI
+LER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wal
+l -Wextra -fno-tree-loop-distribute-patterns"
+
+"Running Make include in microblaze_0/libsrc/uartlite_v3_7/src"
+
+make -C microblaze_0/libsrc/uartlite_v3_7/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COM
+PILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -W
+all -Wextra -fno-tree-loop-distribute-patterns"
+
+"includes"
+
+"Running Make libs in microblaze_0/libsrc/axi2gpio_v1_0/src"
+
+make -C microblaze_0/libsrc/axi2gpio_v1_0/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPIL
+ER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall
+ -Wextra -fno-tree-loop-distribute-patterns"
+
+"Running Make libs in microblaze_0/libsrc/axi_wt931_decoder_v1_0/src"
+
+make -C microblaze_0/libsrc/axi_wt931_decoder_v1_0/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar
+" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-secti
+ons -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+"Running Make libs in microblaze_0/libsrc/bram_v4_7/src"
+
+make -C microblaze_0/libsrc/bram_v4_7/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_F
+LAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall -We
+xtra -fno-tree-loop-distribute-patterns"
+
+"Running Make libs in microblaze_0/libsrc/cpu_v2_15/src"
+
+make -C microblaze_0/libsrc/cpu_v2_15/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_F
+LAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall -We
+xtra -fno-tree-loop-distribute-patterns"
+
+In file included from axi_wt931_decoder.c:4:
+axi_wt931_decoder.c: In function 'wt931_GetAcc':
+axi_wt931_decoder.h:62:5: warning: implicit declaration of function 'Xil_In32' [-Wimplicit-function-declaration]
+   62 |     Xil_In32((BaseAddress) + (RegOffset))
+      |     ^~~~~~~~
+axi_wt931_decoder.c:13:21: note: in expansion of macro 'AXI_WT931_DECODER_mReadReg'
+   13 |         acc_data1 = AXI_WT931_DECODER_mReadReg(AXI_WT931_DECODER_BASEADDR,
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~
+axi2gpio_selftest.c: In function 'AXI2GPIO_Reg_SelfTest':
+axi2gpio_selftest.c:52:64: warning: comparison of integer expressions of different signedness: 'u32' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
+   52 |           if ( AXI2GPIO_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
+      |                                                                ^~
+axi2gpio_selftest.c:36:13: warning: unused variable 'Index' [-Wunused-variable]
+   36 |         int Index;
+      |             ^~~~~
+axi_wt931_decoder_selftest.c: In function 'AXI_WT931_DECODER_Reg_SelfTest':
+axi_wt931_decoder_selftest.c:52:73: warning: comparison of integer expressions of different signedness: 'u32' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
+   52 |           if ( AXI_WT931_DECODER_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
+      |                                                                         ^~
+axi_wt931_decoder_selftest.c:36:13: warning: unused variable 'Index' [-Wunused-variable]
+   36 |         int Index;
+      |             ^~~~~
+"Running Make libs in microblaze_0/libsrc/freertos10_xilinx_v1_11/src"
+
+make -C microblaze_0/libsrc/freertos10_xilinx_v1_11/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-a
+r" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sect
+ions -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+"Running Make libs in microblaze_0/libsrc/gpio_v4_9/src"
+
+make -C microblaze_0/libsrc/gpio_v4_9/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_F
+LAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall -We
+xtra -fno-tree-loop-distribute-patterns"
+
+"Running Make libs in microblaze_0/libsrc/intc_v3_14/src"
+
+make -C microblaze_0/libsrc/intc_v3_14/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_
+FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall -W
+extra -fno-tree-loop-distribute-patterns"
+
+"Running Make libs in microblaze_0/libsrc/led_v1_0/src"
+
+make -C microblaze_0/libsrc/led_v1_0/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_FL
+AGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall -Wex
+tra -fno-tree-loop-distribute-patterns"
+
+"Running Make libs in microblaze_0/libsrc/tmrctr_v4_9/src"
+
+make -C microblaze_0/libsrc/tmrctr_v4_9/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER
+_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall -
+Wextra -fno-tree-loop-distribute-patterns"
+
+led_selftest.c: In function 'LED_Reg_SelfTest':
+led_selftest.c:52:59: warning: comparison of integer expressions of different signedness: 'u32' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
+   52 |           if ( LED_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
+      |                                                           ^~
+led_selftest.c:36:13: warning: unused variable 'Index' [-Wunused-variable]
+   36 |         int Index;
+      |             ^~~~~
+"Running Make libs in microblaze_0/libsrc/uartlite_v3_7/src"
+
+make -C microblaze_0/libsrc/uartlite_v3_7/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPIL
+ER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall
+ -Wextra -fno-tree-loop-distribute-patterns"
+
+mb-ar: creating ../../../lib/libfreertos.a
+microblaze_sleep.c:73:9: note: '#pragma message: For the sleep routines, assembly instructions are used'
+   73 | #pragma message ("For the sleep routines, assembly instructions are used")
+      |         ^~~~~~~
+'Finished building libraries parallelly.'
+
+make --no-print-directory archive
+
+mb-ar -r  microblaze_0/lib/libxil.a microblaze_0/lib/axi2gpio_selftest.o microblaze_0/lib/xplatform_info.o microblaze_0/lib/xua
+rtlite.o microblaze_0/lib/microblaze_disable_exceptions.o microblaze_0/lib/xil_mem.o microblaze_0/lib/xtmrctr_options.o microbl
+aze_0/lib/xil_testio.o microblaze_0/lib/microblaze_disable_dcache.o microblaze_0/lib/microblaze_flush_dcache_range.o microblaze
+_0/lib/microblaze_flush_cache_ext.o microblaze_0/lib/xil_sleepcommon.o microblaze_0/lib/axi_wt931_decoder.o microblaze_0/lib/xi
+l_misc_psreset_api.o microblaze_0/lib/xinterrupt_wrap.o microblaze_0/lib/xil_cache.o microblaze_0/lib/xil_util.o microblaze_0/l
+ib/inbyte.o microblaze_0/lib/xuartlite_stats.o microblaze_0/lib/led.o microblaze_0/lib/print.o microblaze_0/lib/xbram_sinit.o m
+icroblaze_0/lib/microblaze_scrub.o microblaze_0/lib/microblaze_invalidate_dcache.o microblaze_0/lib/microblaze_disable_interrup
+ts.o microblaze_0/lib/xbram_selftest.o microblaze_0/lib/axi2gpio.o microblaze_0/lib/_exit.o microblaze_0/lib/xgpio_g.o microbla
+ze_0/lib/xuartlite_g.o microblaze_0/lib/xtmrctr_stats.o microblaze_0/lib/xtmrctr_l.o microblaze_0/lib/microblaze_flush_cache_ex
+t_range.o microblaze_0/lib/microblaze_disable_icache.o microblaze_0/lib/xtmrctr_intr.o microblaze_0/lib/microblaze_exception_ha
+ndler.o microblaze_0/lib/xil_printf.o microblaze_0/lib/xintc_g.o microblaze_0/lib/xbram_g.o microblaze_0/lib/xintc_selftest.o m
+icroblaze_0/lib/xintc_l.o microblaze_0/lib/outbyte.o microblaze_0/lib/xgpio_intr.o microblaze_0/lib/microblaze_invalidate_dcach
+e_range.o microblaze_0/lib/microblaze_invalidate_cache_ext.o microblaze_0/lib/microblaze_sleep.o microblaze_0/lib/xuartlite_sin
+it.o microblaze_0/lib/hw_exception_handler.o microblaze_0/lib/xtmrctr.o microblaze_0/lib/xuartlite_selftest.o microblaze_0/lib/
+xgpio_sinit.o microblaze_0/lib/microblaze_update_dcache.o microblaze_0/lib/xil_testcache.o microblaze_0/lib/microblaze_selftest
+.o microblaze_0/lib/microblaze_interrupts_g.o microblaze_0/lib/microblaze_enable_exceptions.o microblaze_0/lib/xio.o microblaze
+_0/lib/xtmrctr_g.o microblaze_0/lib/microblaze_enable_dcache.o microblaze_0/lib/axi_wt931_decoder_selftest.o microblaze_0/lib/x
+bram.o microblaze_0/lib/microblaze_invalidate_icache_range.o microblaze_0/lib/xtmrctr_selftest.o microblaze_0/lib/microblaze_in
+it_dcache_range.o microblaze_0/lib/microblaze_invalidate_icache.o microblaze_0/lib/errno.o microblaze_0/lib/xuartlite_l.o micro
+blaze_0/lib/xintc_options.o microblaze_0/lib/led_selftest.o microblaze_0/lib/microblaze_invalidate_cache_ext_range.o microblaze
+_0/lib/xintc_intr.o microblaze_0/lib/xil_exception.o microblaze_0/lib/pvr.o microblaze_0/lib/xgpio.o microblaze_0/lib/xil_testm
+em.o microblaze_0/lib/microblaze_update_icache.o microblaze_0/lib/xuartlite_intr.o microblaze_0/lib/microblaze_flush_dcache.o m
+icroblaze_0/lib/xil_clocking.o microblaze_0/lib/xil_assert.o microblaze_0/lib/microblaze_enable_interrupts.o microblaze_0/lib/x
+gpio_extra.o microblaze_0/lib/microblaze_init_icache_range.o microblaze_0/lib/microblaze_enable_icache.o microblaze_0/lib/xintc
+.o microblaze_0/lib/xbram_intr.o microblaze_0/lib/xtmrctr_sinit.o microblaze_0/lib/fcntl.o microblaze_0/lib/xgpio_selftest.o
+
+mb-ar: creating microblaze_0/lib/libxil.a
+'Finished building libraries'
+
+
+12:22:42 Build Finished (took 13s.293ms)
+

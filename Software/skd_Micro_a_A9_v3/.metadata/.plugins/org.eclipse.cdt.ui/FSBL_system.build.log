@@ -1,0 +1,10 @@
+12:22:03 **** Incremental Build of configuration Debug for project FSBL_system ****
+make all 
+Generating bif file for the system project
+generate_system_bif.bat 55645 I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/ARM/export/ARM/ARM.xpfm standalone_ps7_cortexa9_0 I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/FSBL_system/Debug/system.bif
+sdcard_gen --xpfm I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/ARM/export/ARM/ARM.xpfm --sys_config ARM --bif I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/FSBL_system/Debug/system.bif --bitstream I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/FSBL/_ide/bitstream/sys_wrapper.bit --elf I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/FSBL/Debug/FSBL.elf,ps7_cortexa9_0
+creating BOOT.BIN using I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/FSBL/_ide/bitstream/sys_wrapper.bit
+Running D:/Xilinx/Vitis/2022.1/bin/bootgen  -image I:/FPGA/OurEDA_P1K/micro_blaze_ps_v1/skd_Micro_a_A9_v3/FSBL_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN
+
+12:22:11 Build Finished (took 8s.639ms)
+

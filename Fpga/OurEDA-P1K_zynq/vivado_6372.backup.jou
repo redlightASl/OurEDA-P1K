@@ -1,0 +1,45 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Thu Sep 29 16:33:12 2022
+# Process ID: 6372
+# Current directory: F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/OurEDA-P1K_zynq
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent20248 F:\Git_repository\OurEDA\OurEDA-P1K\Fpga\OurEDA-P1K_zynq\OurEDA-P1K_zynq.xpr
+# Log file: F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/OurEDA-P1K_zynq/vivado.log
+# Journal file: F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/OurEDA-P1K_zynq\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/OurEDA-P1K_zynq/OurEDA-P1K_zynq.xpr
+update_compile_order -fileset sources_1
+close_project
+create_project managed_ip_project F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/managed_ip_project -part xc7z010clg400-1 -ip
+set_property target_simulator XSim [current_project]
+create_peripheral xilinx.com user axi2uart 1.0 -dir F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/managed_ip_project/../ip_repo
+add_peripheral_interface S00_AXI -interface_mode slave -axi_type lite [ipx::find_open_core xilinx.com:user:axi2uart:1.0]
+generate_peripheral -driver -bfm_example_design -enable_interrupt -debug_hw_example_design [ipx::find_open_core xilinx.com:user:axi2uart:1.0]
+write_peripheral [ipx::find_open_core xilinx.com:user:axi2uart:1.0]
+set_property  ip_repo_paths  F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/managed_ip_project/../ip_repo/axi2uart_1.0 [current_project]
+update_ip_catalog -rebuild
+ipx::edit_ip_in_project -upgrade true -name axi2uart_v1_0_project -directory F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/managed_ip_project/managed_ip_project.tmp/axi2uart_v1_0_project f:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2uart_1.0/component.xml
+update_compile_order -fileset sources_1
+add_files -norecurse -copy_to f:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2uart_1.0/src {F:/Git_repository/OurEDA/OurEDA-P1K/Core/SoC/Uart/uart_rx.v F:/Git_repository/OurEDA/OurEDA-P1K/Core/SoC/Uart/uart_tx.v F:/Git_repository/OurEDA/OurEDA-P1K/Core/SoC/Uart/uart_top.v F:/Git_repository/OurEDA/OurEDA-P1K/Core/SoC/Uart/control.v F:/Git_repository/OurEDA/OurEDA-P1K/Core/SoC/Uart/uart_clk_gen.v}
+update_compile_order -fileset sources_1
+ipx::unload_core f:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2uart_1.0/component.xml
+close_project
+update_ip_catalog -delete_ip xilinx.com:user:axi2uart:1.0 -repo_path f:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2uart_1.0
+create_peripheral xilinx.com user axi2pwm_gpio 1.0 -dir F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/managed_ip_project/../ip_repo
+add_peripheral_interface S00_AXI -interface_mode slave -axi_type lite [ipx::find_open_core xilinx.com:user:axi2pwm_gpio:1.0]
+generate_peripheral -driver -bfm_example_design -debug_hw_example_design [ipx::find_open_core xilinx.com:user:axi2pwm_gpio:1.0]
+write_peripheral [ipx::find_open_core xilinx.com:user:axi2pwm_gpio:1.0]
+set_property  ip_repo_paths  {F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/managed_ip_project/../ip_repo/axi2pwm_gpio_1.0 F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2uart_1.0} [current_project]
+update_ip_catalog -rebuild
+ipx::edit_ip_in_project -upgrade true -name edit_axi2pwm_gpio_v1_0 -directory F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/managed_ip_project/../ip_repo f:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2pwm_gpio_1.0/component.xml
+current_project managed_ip_project
+set_property  ip_repo_paths  f:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2pwm_gpio_1.0 [current_project]
+update_ip_catalog
+current_project edit_axi2pwm_gpio_v1_0
+add_files -norecurse -copy_to f:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2pwm_gpio_1.0/src {F:/Git_repository/OurEDA/OurEDA-P1K/Core/SoC/Pwm/pwm.v F:/Git_repository/OurEDA/OurEDA-P1K/Core/SoC/Gpio/gpio.v}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+close_project

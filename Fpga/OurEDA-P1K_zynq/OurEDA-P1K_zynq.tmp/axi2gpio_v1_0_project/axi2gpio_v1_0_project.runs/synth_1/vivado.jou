@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Tue Oct  4 17:03:11 2022
+# Process ID: 3076
+# Current directory: F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/OurEDA-P1K_zynq/OurEDA-P1K_zynq.tmp/axi2gpio_v1_0_project/axi2gpio_v1_0_project.runs/synth_1
+# Command line: vivado.exe -log axi2gpio_v1_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source axi2gpio_v1_0.tcl
+# Log file: F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/OurEDA-P1K_zynq/OurEDA-P1K_zynq.tmp/axi2gpio_v1_0_project/axi2gpio_v1_0_project.runs/synth_1/axi2gpio_v1_0.vds
+# Journal file: F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/OurEDA-P1K_zynq/OurEDA-P1K_zynq.tmp/axi2gpio_v1_0_project/axi2gpio_v1_0_project.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source axi2gpio_v1_0.tcl -notrace

@@ -1,0 +1,36 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Tue Oct  4 16:59:16 2022
+# Process ID: 3768
+# Current directory: F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/OurEDA-P1K_zynq/OurEDA-P1K_zynq.tmp/axi2gpio_v1_0_project
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent9356 F:\Git_repository\OurEDA\OurEDA-P1K\Fpga\OurEDA-P1K_zynq\OurEDA-P1K_zynq.tmp\axi2gpio_v1_0_project\axi2gpio_v1_0_project.xpr
+# Log file: F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/OurEDA-P1K_zynq/OurEDA-P1K_zynq.tmp/axi2gpio_v1_0_project/vivado.log
+# Journal file: F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/OurEDA-P1K_zynq/OurEDA-P1K_zynq.tmp/axi2gpio_v1_0_project\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/OurEDA-P1K_zynq/OurEDA-P1K_zynq.tmp/axi2gpio_v1_0_project/axi2gpio_v1_0_project.xpr
+INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
+Current project path is 'F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/OurEDA-P1K_zynq/OurEDA-P1K_zynq.tmp/axi2gpio_v1_0_project'
+WARNING: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/OurEDA-P1K_zynq/OurEDA-P1K_zynq.tmp/axi2gpio_v1_0_project/axi2gpio_v1_0_project.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'f:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2pid_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'f:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'f:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2dvp_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'f:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2iic_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'f:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2uart_1.0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/xilinx/Vivado/2020.2/data/ip'.
+open_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:07 . Memory (MB): peak = 1126.395 ; gain = 0.000
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 12
+[Tue Oct  4 17:00:21 2022] Launched synth_1...
+Run output will be captured here: F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/OurEDA-P1K_zynq/OurEDA-P1K_zynq.tmp/axi2gpio_v1_0_project/axi2gpio_v1_0_project.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 12
+[Tue Oct  4 17:03:08 2022] Launched synth_1...
+Run output will be captured here: F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/OurEDA-P1K_zynq/OurEDA-P1K_zynq.tmp/axi2gpio_v1_0_project/axi2gpio_v1_0_project.runs/synth_1/runme.log
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Oct  4 17:06:04 2022...

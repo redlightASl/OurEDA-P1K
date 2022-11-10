@@ -46,48 +46,48 @@
 
         IVerilog+Verilator+GTKWave+OSS-CAD（Yosys）
 
-
     * RV32I软核编写
-
+    
         单周期测试√
-
+    
         三级流水：取指-译码-执行
-
+    
         CPU封装IP
-
+    
         外设UART-Lite√
-
+    
         外设PWM控制√
-
+    
         外设PID√
-
+    
         CPU不支持中断
-
+    
     * 软核配套DMA编写
-
+    
     * 软核配套ITCM、DTCM编写
-
+    
     * DVP总线控制器编写√
-
+    
     * 直方图统计√
-
+    
     * 直方图均衡化（基于Verilog或HLS？）
-
+    
     * 传感器解析状态机编写
-
+    
         九轴传感器
-
+    
         水深水温传感器
 
-        
 
-        
+​        
 
-        
+​        
 
-        
+​        
 
-        
+​        
+
+​        
 
 
 

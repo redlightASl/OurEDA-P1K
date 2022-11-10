@@ -1,0 +1,49 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Mon Oct  3 15:21:59 2022
+# Process ID: 10868
+# Current directory: F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/OurEDA-P1K_zynq
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent21264 F:\Git_repository\OurEDA\OurEDA-P1K\Fpga\OurEDA-P1K_zynq\OurEDA-P1K_zynq.xpr
+# Log file: F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/OurEDA-P1K_zynq/vivado.log
+# Journal file: F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/OurEDA-P1K_zynq\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/OurEDA-P1K_zynq/OurEDA-P1K_zynq.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'f:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2pid_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'f:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'f:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2dvp_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'f:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2iic_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'f:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2uart_1.0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/xilinx/Vivado/2020.2/data/ip'.
+open_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:07 . Memory (MB): peak = 1126.699 ; gain = 0.000
+update_compile_order -fileset sources_1
+ipx::edit_ip_in_project -upgrade true -name axi2pid_v1_0_project -directory F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/OurEDA-P1K_zynq/OurEDA-P1K_zynq.tmp/axi2pid_v1_0_project f:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2pid_1.0/component.xml
+INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
+Current project path is 'f:/git_repository/oureda/oureda-p1k/fpga/oureda-p1k_zynq/oureda-p1k_zynq.tmp/axi2pid_v1_0_project'
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/xilinx/Vivado/2020.2/data/ip'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'f:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2pid_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'f:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2gpio_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'f:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2dvp_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'f:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2iic_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'f:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2uart_1.0'.
+INFO: [IP_Flow 19-795] Syncing license key meta-data
+update_compile_order -fileset sources_1
+add_files -norecurse {F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2pid_1.0/src/pid_top.v F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2pid_1.0/src/pid_error.v F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2pid_1.0/src/pid_tim.v F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2pid_1.0/src/pid_value.v F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2pid_1.0/src/pid_inc_value.v}
+update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2pid_1.0/src/pid_tb.v w ]
+add_files -fileset sim_1 F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2pid_1.0/src/pid_tb.v
+close [ open F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2pid_1.0/src/pwm_tb.v w ]
+add_files -fileset sim_1 F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2pid_1.0/src/pwm_tb.v
+update_compile_order -fileset sim_1
+close_project
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Oct  3 19:20:16 2022...

@@ -1,0 +1,25 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Mon Oct  3 15:21:59 2022
+# Process ID: 10868
+# Current directory: F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/OurEDA-P1K_zynq
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent21264 F:\Git_repository\OurEDA\OurEDA-P1K\Fpga\OurEDA-P1K_zynq\OurEDA-P1K_zynq.xpr
+# Log file: F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/OurEDA-P1K_zynq/vivado.log
+# Journal file: F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/OurEDA-P1K_zynq\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/OurEDA-P1K_zynq/OurEDA-P1K_zynq.xpr
+update_compile_order -fileset sources_1
+ipx::edit_ip_in_project -upgrade true -name axi2pid_v1_0_project -directory F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/OurEDA-P1K_zynq/OurEDA-P1K_zynq.tmp/axi2pid_v1_0_project f:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2pid_1.0/component.xml
+update_compile_order -fileset sources_1
+add_files -norecurse {F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2pid_1.0/src/pid_top.v F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2pid_1.0/src/pid_error.v F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2pid_1.0/src/pid_tim.v F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2pid_1.0/src/pid_value.v F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2pid_1.0/src/pid_inc_value.v}
+update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2pid_1.0/src/pid_tb.v w ]
+add_files -fileset sim_1 F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2pid_1.0/src/pid_tb.v
+close [ open F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2pid_1.0/src/pwm_tb.v w ]
+add_files -fileset sim_1 F:/Git_repository/OurEDA/OurEDA-P1K/Fpga/ip_repo/axi2pid_1.0/src/pwm_tb.v
+update_compile_order -fileset sim_1
+close_project

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="devices_info_Local" value="{&quot;cables&quot;:[{&quot;name&quot;:&quot;Platform Cable USB II 13724327082d01&quot;,&quot;indexContextMap&quot;:{&quot;3&quot;:&quot;jsn-DLC10-13724327082d01-4ba00477-0&quot;,&quot;4&quot;:&quot;jsn-DLC10-13724327082d01-13722093-0&quot;}}]}"/>
+	<item key="FSBL_system-bitFile" value="${project_loc:FSBL}/_ide/bitstream/sys_wrapper.bit"/>
+	<item key="FSBL_system-bmmFile" value="${project_loc:FSBL}/_ide/bitstream/sys_wrapper.mmi"/>
+	<item key="FSBL_system-target" value="Local"/>
+	<item key="FSBL_system-device" value="Auto Detect"/>
+	<item key="FSBL_system-partial_bit" value="false"/>
+	<item key="FSBL_system-skip_rev_check" value="false"/>
+	<item key="programfpga.sdxproject" value="FSBL_system"/>
+	<item key="FSBL_system-microblaze_0-initElf" value="I:\FPGA\OurEDA_P1K\micro_blaze_ps_v1\skd_Micro_a_A9_v3\freertos\Debug\freertos.elf"/>
+</section>
